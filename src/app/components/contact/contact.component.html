@@ -1,0 +1,35 @@
+<mat-card flex *ngIf='messageSaved === false'>
+    <h2>Please Fill out the Form</h2>
+    <hr>
+    <form #contactform [formGroup]='contactForm' (ngSubmit)='onSubmit(contactForm.value); contactform.reset()'>
+        <mat-form-field>
+            <input required matInput type='text' placeholder='Name' formControlName='name'>
+            <small class='error' *ngIf="!contactForm.get('name').valid && contactForm.get('name').touched">
+                <mat-icon>report_problem</mat-icon> *Please enter your name
+            </small>
+        </mat-form-field>
+        <mat-form-field>
+            <input required matInput type='text' placeholder='Email' formControlName='email'>
+            <small class='error' *ngIf="!contactForm.get('email').valid && contactForm.get('email').touched"><mat-icon>report_problem</mat-icon> *Please
+                enter your email</small>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea required matInput type='text' placeholder='Message (20 characters minimum)' formControlName='message'></textarea>
+            <small class='error' *ngIf="!contactForm.get('message').valid && contactForm.get('message').touched"><mat-icon>report_problem</mat-icon> *Please
+                leave a message</small>
+        </mat-form-field>
+
+        <button [disabled]='!contactForm.valid' mat-raised-button color='primary' type='submit'>Submit</button>
+        <button mat-raised-button color='accent' mat-dialog-close>Cancel</button>
+    </form>
+    <br/>
+    <hr>
+    <h3>Alternatively, you can contact me via email or social media.</h3>
+    <p>My email is <strong>EETfitness@gmail (dot) com</strong></p>
+    
+</mat-card>
+
+<mat-card *ngIf='messageSaved === true'>
+    <mat-icon class='done-icon'>check_circle_outline</mat-icon><h2>Thank you. Your message has been received!</h2>
+    <button mat-raised-button color='primary' mat-dialog-close>Close</button>
+</mat-card>

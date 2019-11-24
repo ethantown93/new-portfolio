@@ -1,0 +1,14 @@
+<div class='presentation-container'>
+    <h1>Presentations</h1>
+    <div class='presentation-card' *ngFor='let presentation of presentations'>
+        <mat-card>
+            <mat-video title='{{ presentation.title }}' [autoplay]='false' [preload]='true'
+                src='{{ presentation.src }}'>
+            </mat-video>
+        </mat-card>
+    </div>
+</div>
+
+<mat-card *ngIf='noData === true'>
+    <h2>{{ error }}</h2>
+</mat-card>

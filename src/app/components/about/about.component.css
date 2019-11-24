@@ -1,0 +1,61 @@
+.container {
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 100px;
+}
+
+.personal {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+img {
+    border-radius: 180%;
+    height: 250px;
+    width: 250px;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+#first-div{
+    background: rgb(10,3,138);
+    background: linear-gradient(180deg, rgba(10,3,138,1) 0%, rgba(23,23,201,1) 64%, rgba(110,137,218,1) 100%);    height: 100px;
+    width: 100%;
+    height: 350px;
+    position: absolute;
+}
+
+.first-div-content {
+    color: white;
+    text-align: center;
+    margin:auto;
+    width: 50%;
+    line-height: 30px;
+}
+
+.first-div-content h2{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+mat-card {
+    background-color: white;
+    margin: auto;
+    max-height: 600px;
+    max-width: 60%;
+    margin-top: 290px;
+    z-index: 1;
+    box-shadow: 1px 1px 1px 1px rgba(158, 158, 158, 0.507);
+}
+
+h3 {
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+}

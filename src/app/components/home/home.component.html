@@ -1,0 +1,67 @@
+<div class="social-icons">
+        <a href="https://www.facebook.com/ethan.townsend.5" target='blank' class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href=" https://github.com/ethantown93" target='blank' class="github"><i class="fa fa-github"></i></a>
+        <a href=" https://www.instagram.com/ethantownsend93/" target='blank' class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/ethan-townsend-15320a10b/" target='blank' class="linkedin"><i class="fa fa-linkedin"></i></a>
+      </div>
+
+<div class='container'>
+    <div class='personal'>
+        <h1>
+            Husband, Full-Stack Developer, and Novice Designer
+        </h1>
+        <p>I'm someone who's passionate about web technologies, <br />
+            writing the best code that I can, <br /> and creating dynamic
+            and responsive web applications.</p>
+        <img class='mugshot' src='/assets/images/ethan.png' alt='ethans mugshot'>
+    </div>
+
+    <div id='first-div'>
+        <div class='first-div-content'>
+            <h2>
+                Hi, I'm Ethan. It's a Pleasure to meet you.
+            </h2>
+            <p>Since my journey to become a full stack developer started two years ago when I enrolled at Bellevue
+                University, I've learned A LOT.
+                I had no prior knowledge of what creating web applications meant, let alone how to code even a basic
+                HTML page. Since then, I've come a long way.
+                I've built complete end to end MEAN stack applications on my own, I've built MEAN stack applications as
+                part of a team, and I'm constantly learning more
+                every day.
+            </p>
+        </div>
+
+    </div>
+    <div>
+        <mat-card class='skillsets-card'>
+            <h3>My Skillsets</h3>
+            <canvas id='barChart'></canvas>
+        </mat-card>
+    </div>
+</div>
+
+<hr>
+<div class='main'>
+    <mat-card class='main-card' *ngIf='error === false'>
+        <h2>My Recent Projects</h2>
+        <ul class='main-1'>
+            <li class='home-container' *ngFor='let project of projects'>
+                <div class='home-container-card'>
+                    <div class='card-back'>
+                        <p>{{ project.description }}</p>
+                        <a href={{project.gitHub}} target='blank'><button mat-raised-button >Check out the
+                                GitHub</button></a>
+                        <a href={{project.link}} target='blank'><button mat-raised-button
+                                *ngIf='project.link !== project.gitHub'>Go to Website</button></a>
+                    </div>
+                    <div class='card-front'>
+                        <img src='{{project.src}}' alt='{{project.alt}}'>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </mat-card>
+    <mat-card *ngIf='error === true'>
+        <h2>{{ errorMessage }}</h2>
+    </mat-card>
+</div>

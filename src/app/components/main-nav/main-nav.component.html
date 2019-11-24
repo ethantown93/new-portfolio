@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class='side-toolbar'>Menu</mat-toolbar>
+    <mat-nav-list>
+      <ul>
+        <li>
+          <a href="#"><button mat-button>About Me</button></a>
+        </li>
+        <li>
+          <a href="#"><button mat-button>DevOps Presentations</button></a>
+        </li>
+        <li>
+          <a href="#"><button mat-button>Diagrams</button></a>
+        </li>
+      </ul>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class='primary-toolbar'>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class='name'>Ethan's Portfolio</span>
+      <span class='nav-link'></span>
+      <ul>
+        <li>
+          <button (click)='openDialog()' mat-raised-button>Contact</button>
+        </li>
+        <li>
+          <a routerLink='/'>Home</a>
+        </li>
+        <li>
+          <a routerLink='/about'>About Me</a>
+        </li>
+        <li>
+          <a routerLink='/devops-presentations'>DevOps Presentations</a>
+        </li>
+        <li>
+          <a href="#">Diagrams</a>
+        </li>
+      </ul>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
