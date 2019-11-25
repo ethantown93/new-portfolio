@@ -15,7 +15,7 @@ export class DevopsPresentationsComponent implements OnInit {
   noData: boolean = false;
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/api/p/video-presentations').subscribe( res => {
+    this.http.get('/api/p/video-presentations').subscribe( res => {
       if(!res){
         console.log('no data');
       } else if (res) {

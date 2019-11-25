@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.http.get(this.languagesUrl + '/api/languages').subscribe( res => {
+    this.http.get('/api/languages').subscribe( res => {
       if(res){
         this.languagesData = res;
         console.log(this.languagesData)
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       setTimeout(()=>{this.buildChart()}, 100)
     })
 
-    this.http.get('http://localhost:3000/api/p/projects').subscribe( res => {
+    this.http.get('/api/p/projects').subscribe( res => {
       if(res){
         this.projects = res;
         console.log(this.projects)

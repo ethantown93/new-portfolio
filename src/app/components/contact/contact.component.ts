@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(value){
-    this.http.post('http://localhost:3000/api/m/messages', value).subscribe( res =>{
+    this.http.post('/api/m/messages', value).subscribe( res =>{
       if(!res){
         console.log('no response from db')
       } else if(res){

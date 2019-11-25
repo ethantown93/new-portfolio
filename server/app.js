@@ -1,12 +1,3 @@
-/*
-============================================
-; Title: WEB	450	Bob’s	Computer	Repair	Shop
-; Author: Ethan Townsend, Lea Trueworthy, Natasha Whitmer, and Jason Sullenger
-; Date: 17 October 2019
-; Description: End-to-end billing system for Bob's Computer - MEAN stack
-;===========================================
-*/
-
 const express = require("express");
 const http = require("http");
 const bodyParser = require("body-parser");
@@ -26,8 +17,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.use(express.static(path.join(__dirname, "../dist/bcrs")));
-app.use("/", express.static(path.join(__dirname, "../dist/bcrs")));
+app.use(express.static(path.join(__dirname, "../dist/new-portfolio")));
+app.use("/", express.static(path.join(__dirname, "../dist/new-portfolio")));
 
 app.use('/api', languagesApi);
 app.use('/api/p', projectsApi);
