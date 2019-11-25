@@ -873,7 +873,6 @@
             var AboutComponent = /** @class */ (function () {
                 function AboutComponent(http) {
                     this.http = http;
-                    this.languagesUrl = 'http://localhost:3000';
                     this.barChart = [];
                     this.languagesValue = [];
                     this.languageNames = [];
@@ -995,7 +994,7 @@
                 };
                 ContactComponent.prototype.onSubmit = function (value) {
                     var _this = this;
-                    this.http.post('http://localhost:3000/api/m/messages', value).subscribe(function (res) {
+                    this.http.post('/api/m/messages', value).subscribe(function (res) {
                         if (!res) {
                             console.log('no response from db');
                         }
@@ -1056,7 +1055,7 @@
                 }
                 DevopsPresentationsComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this.http.get('http://localhost:3000/api/p/video-presentations').subscribe(function (res) {
+                    this.http.get('/api/p/video-presentations').subscribe(function (res) {
                         if (!res) {
                             console.log('no data');
                         }
@@ -1152,7 +1151,6 @@
                     this.projects = [];
                     this.errorMessage = 'There was an error loading this data.';
                     this.error = false;
-                    this.languagesUrl = 'http://localhost:3000';
                     this.barChart = [];
                     this.languagesValue = [];
                     this.languageNames = [];
