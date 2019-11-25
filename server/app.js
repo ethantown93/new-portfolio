@@ -35,15 +35,11 @@ const connString =
 
 /************************* Mongoose connection strings go below this line  ***************/
 
-mongoose
-  .connect(connString, {
-    promiseLibrary: require("bluebird"),
-    useNewUrlParser: true
-  })
-  .then(() =>
-    console.debug("Connection to the Database instance was successful")
-  )
-  .catch(err => console.debug("MongoDB Error: " + err.message));
+mongoose.connect(connString).then(() => {
+  console.log('successfully connected to MongoDB')
+}).catch(() => {
+  console.log('connection failed.');
+})
 
 
 /**
