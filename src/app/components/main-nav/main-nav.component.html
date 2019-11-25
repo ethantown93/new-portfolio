@@ -5,13 +5,19 @@
     <mat-nav-list>
       <ul>
         <li>
-          <a href="#"><button mat-button>About Me</button></a>
+          <button (click)='openDialog()' mat-raised-button>Contact</button>
         </li>
         <li>
-          <a href="#"><button mat-button>DevOps Presentations</button></a>
+          <a routerLink='/'>Home</a>
         </li>
         <li>
-          <a href="#"><button mat-button>Diagrams</button></a>
+          <a routerLink='#'>About Me</a>
+        </li>
+        <li>
+          <a routerLink='/devops-presentations'>DevOps Presentations</a>
+        </li>
+        <li>
+          <a href="#">Diagrams</a>
         </li>
       </ul>
     </mat-nav-list>
