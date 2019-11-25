@@ -14,8 +14,6 @@ export class HomeComponent implements OnInit {
   errorMessage = 'There was an error loading this data.';
   error: boolean = false;
 
-  languagesUrl = 'http://localhost:3000'
-
   barChart = [];
   languagesData: any;
   languagesValue: any = [];
