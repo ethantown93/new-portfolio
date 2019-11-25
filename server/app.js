@@ -17,8 +17,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.use(express.static(path.join(__dirname, "../dist/new-portfolio")));
-app.use("/", express.static(path.join(__dirname, "../dist/new-portfolio")));
+app.use(express.static(path.join(__dirname, "../dist/portfolio")));
+app.use("/", express.static(path.join(__dirname, "../dist/portfolio")));
 
 app.use('/api', languagesApi);
 app.use('/api/p', projectsApi);
