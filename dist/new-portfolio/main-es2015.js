@@ -871,7 +871,6 @@ __webpack_require__.r(__webpack_exports__);
 let AboutComponent = class AboutComponent {
     constructor(http) {
         this.http = http;
-        this.languagesUrl = 'http://localhost:3000';
         this.barChart = [];
         this.languagesValue = [];
         this.languageNames = [];
@@ -998,7 +997,7 @@ let ContactComponent = class ContactComponent {
     ngOnInit() {
     }
     onSubmit(value) {
-        this.http.post('http://localhost:3000/api/m/messages', value).subscribe(res => {
+        this.http.post('/api/m/messages', value).subscribe(res => {
             if (!res) {
                 console.log('no response from db');
             }
@@ -1066,7 +1065,7 @@ let DevopsPresentationsComponent = class DevopsPresentationsComponent {
         this.noData = false;
     }
     ngOnInit() {
-        this.http.get('http://localhost:3000/api/p/video-presentations').subscribe(res => {
+        this.http.get('/api/p/video-presentations').subscribe(res => {
             if (!res) {
                 console.log('no data');
             }
@@ -1177,7 +1176,6 @@ let HomeComponent = class HomeComponent {
         this.projects = [];
         this.errorMessage = 'There was an error loading this data.';
         this.error = false;
-        this.languagesUrl = 'http://localhost:3000';
         this.barChart = [];
         this.languagesValue = [];
         this.languageNames = [];
