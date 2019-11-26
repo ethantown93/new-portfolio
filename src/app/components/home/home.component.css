@@ -200,6 +200,12 @@ mat-card {
   }
 
   @media (max-width: 768px) {
+
+    button {
+        line-height: 0px ;
+        padding: 0px ;
+    }
+
     .home-container {
         width: 200px;
         height: 98px;
@@ -239,6 +245,7 @@ mat-card {
         width: 200px;
         height: 98px;
     }
+
 
     .social-icons {
         position: fixed;
