@@ -60,4 +60,12 @@ mat-icon {
     color: green
 }
 
+@media (max-width: 768px) {
+
+    button {
+        padding: 0px ;
+    }
+
+
+  }
 
