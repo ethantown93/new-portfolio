@@ -3,6 +3,7 @@ mat-card {
     max-width: 60%;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 mat-card-title {
@@ -21,4 +22,12 @@ img {
     height: 30%;
     margin-left: 15px;
     margin-bottom: 15px;
+}
+
+@media (max-width: 768px){
+    img {
+        width: 95%;
+        height: 30%;
+        margin: 10px;
+    }
 }
