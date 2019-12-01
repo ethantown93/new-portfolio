@@ -23,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DevopsPresentationsComponent } from './components/devops-presentations/devops-presentations.component';
 import { MatVideoModule } from 'mat-video';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { MatVideoModule } from 'mat-video';
     FooterComponent,
     MainNavComponent,
     DevopsPresentationsComponent,
+    LoginComponent,
   ],
   entryComponents: [ContactComponent],
   imports: [

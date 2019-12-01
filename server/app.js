@@ -12,6 +12,7 @@ app.use(cors());
 const languagesApi = require('./routes/codingLanguages-api');
 const projectsApi = require('./routes/projects-api');
 const messageApi = require('./routes/contact-api');
+const loginApi = require('./routes/login-api');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,7 +23,8 @@ app.use("/", express.static(path.join(__dirname, "../dist/portfolio")));
 
 app.use('/api', languagesApi);
 app.use('/api/p', projectsApi);
-app.use('/api/m', messageApi)
+app.use('/api/m', messageApi);
+app.use('/api/login', loginApi);
 
 
 // Global variables

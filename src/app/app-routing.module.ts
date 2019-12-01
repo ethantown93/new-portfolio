@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { DevopsPresentationsComponent } from './components/devops-presentations/devops-presentations.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'devops-presentations',
     component: DevopsPresentationsComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 
 ];

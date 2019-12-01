@@ -321,7 +321,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<mat-card>\r\n    <mat-card-title>My Story</mat-card-title>\r\n    <img src='/assets/images/ece+ethan.png' alt='Ece and Ethan in Istanbul'>\r\n    <mat-card-content>\r\n        Hi, my name is Ethan Towsend. I'm originally from Maine, and am currently living in San Diego California. My\r\n        story starts out a lot like everyone else's. I had a fairly normal childhood.\r\n        I grew up in a small town, no more than 2,000 people, where everyone knew everyone and there really wasn't much\r\n        going on.\r\n    </mat-card-content>\r\n    <br />\r\n    <mat-card-content>\r\n        Fast forward to when I turned 18 and was getting ready to graduate highschool,\r\n        I had no clue what I wanted to do with my life (like most kids that age). I did know one thing, I knew that I wasn't ready to go to college. However, I did end up attending for one semester, after which, I knew for sure that I wasn't ready for university. So, I dropped out (which as it turns out was one of my best decisions) and joined the Military. During my time in the Military my family had moved out to San Diego California, so naturally once I had finished my time in the military I moved out there to be with them.   \r\n    </mat-card-content>\r\n    <br />\r\n    <mat-card-content>\r\n        By this time I had aged some more and gained a little perspective on life, and decided I should enroll in college again. This ended up being the single best decision I have ever made, not because it would eventually lead to me getting my degree, but because in the process of going back to school I met the woman who would eventually become my wife. So, in reference to the previous paragraph, dropping out when I knew I wasn't ready for university, I believe, put me on the path to my wife and I meeting.\r\n    </mat-card-content>\r\n    <br/>\r\n    <mat-card-content>\r\n        After three 2.5 years of dating, my wife and I finally got married. We just celebrated our one year aniversarry. We've traveled the world togeteher, and been through a lot. She is the one who really pushed me to get my degree, and here I am at the ripe old age of 27 finally getting it. So, that is my story (up until this point).\r\n    </mat-card-content>\r\n</mat-card>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<mat-card>\r\n    <mat-card-title>My Story</mat-card-title>\r\n    <img src='/assets/images/ece+ethan.PNG' alt='Ece and Ethan in Istanbul'>\r\n    <mat-card-content>\r\n        Hi, my name is Ethan Towsend. I'm originally from Maine, and am currently living in San Diego California. My\r\n        story starts out a lot like everyone else's. I had a fairly normal childhood.\r\n        I grew up in a small town, no more than 2,000 people, where everyone knew everyone and there really wasn't much\r\n        going on.\r\n    </mat-card-content>\r\n    <br />\r\n    <mat-card-content>\r\n        Fast forward to when I turned 18 and was getting ready to graduate highschool,\r\n        I had no clue what I wanted to do with my life (like most kids that age). I did know one thing, I knew that I wasn't ready to go to college. However, I did end up attending for one semester, after which, I knew for sure that I wasn't ready for university. So, I dropped out (which as it turns out was one of my best decisions) and joined the Military. During my time in the Military my family had moved out to San Diego California, so naturally once I had finished my time in the military I moved out there to be with them.   \r\n    </mat-card-content>\r\n    <br />\r\n    <mat-card-content>\r\n        By this time I had aged some more and gained a little perspective on life, and decided I should enroll in college again. This ended up being the single best decision I have ever made, not because it would eventually lead to me getting my degree, but because in the process of going back to school I met the woman who would eventually become my wife. So, in reference to the previous paragraph, dropping out when I knew I wasn't ready for university, I believe, put me on the path to my wife and I meeting.\r\n    </mat-card-content>\r\n    <br/>\r\n    <mat-card-content>\r\n        After three 2.5 years of dating, my wife and I finally got married. We just celebrated our one year aniversarry. We've traveled the world togeteher, and been through a lot. She is the one who really pushed me to get my degree, and here I am at the ripe old age of 27 finally getting it. So, that is my story (up until this point).\r\n    </mat-card-content>\r\n</mat-card>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/contact/contact.component.html": 
@@ -366,6 +366,17 @@
             "use strict";
             __webpack_require__.r(__webpack_exports__);
             /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"social-icons\">\r\n        <a href=\"https://www.facebook.com/ethan.townsend.5\" target='blank' class=\"facebook\"><i class=\"fa fa-facebook\"></i></a>\r\n        <a href=\" https://github.com/ethantown93\" target='blank' class=\"github\"><i class=\"fa fa-github\"></i></a>\r\n        <a href=\" https://www.instagram.com/ethantownsend93/\" target='blank' class=\"instagram\"><i class=\"fa fa-instagram\"></i></a>\r\n        <a href=\"https://www.linkedin.com/in/ethan-townsend-15320a10b/\" target='blank' class=\"linkedin\"><i class=\"fa fa-linkedin\"></i></a>\r\n      </div>\r\n\r\n<div class='container'>\r\n    <div class='personal'>\r\n        <h1>\r\n            Husband, Full-Stack Developer, and Novice Designer\r\n        </h1>\r\n        <p>I'm someone who's passionate about web technologies, <br />\r\n            writing the best code that I can, <br /> and creating dynamic\r\n            and responsive web applications.</p>\r\n        <img class='mugshot' src='/assets/images/ethan.png' alt='ethans mugshot'>\r\n    </div>\r\n\r\n    <div id='first-div'>\r\n        <div class='first-div-content'>\r\n            <h2>\r\n                Hi, I'm Ethan. It's a Pleasure to meet you.\r\n            </h2>\r\n            <p>Since my journey to become a full stack developer started two years ago when I enrolled at Bellevue\r\n                University, I've learned A LOT.\r\n                I had no prior knowledge of what creating web applications meant, let alone how to code even a basic\r\n                HTML page. Since then, I've come a long way.\r\n                I've built complete end to end MEAN stack applications on my own, I've built MEAN stack applications as\r\n                part of a team, and I'm constantly learning more\r\n                every day.\r\n            </p>\r\n        </div>\r\n\r\n    </div>\r\n    <div>\r\n        <mat-card class='skillsets-card'>\r\n            <h3>My Skillsets</h3>\r\n            <canvas id='barChart'></canvas>\r\n        </mat-card>\r\n    </div>\r\n</div>\r\n\r\n<hr>\r\n<div class='main'>\r\n    <mat-card class='main-card' *ngIf='error === false'>\r\n        <h2>My Recent Projects</h2>\r\n        <ul class='main-1'>\r\n            <li class='home-container' *ngFor='let project of projects'>\r\n                <div class='home-container-card'>\r\n                    <div class='card-back'>\r\n                        <p>{{ project.description }}</p>\r\n                        <a href={{project.gitHub}} target='blank'><button mat-raised-button > Go to\r\n                                GitHub</button></a>\r\n                        <a href={{project.link}} target='blank'><button mat-raised-button\r\n                                *ngIf='project.link !== project.gitHub'>Go to Website</button></a>\r\n                    </div>\r\n                    <div class='card-front'>\r\n                        <img src='{{project.src}}' alt='{{project.alt}}'>\r\n                    </div>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </mat-card>\r\n    <mat-card *ngIf='error === true'>\r\n        <h2>{{ errorMessage }}</h2>\r\n    </mat-card>\r\n</div>");
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/login/login.component.html": 
+        /*!*********************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/login/login.component.html ***!
+          \*********************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class='login-container' fxLayoutAlign='center center'>\n    <mat-card>\n        <mat-card-title>\n            Admin Login\n        </mat-card-title>\n        <mat-card-content>\n            <form [formGroup]='loginForm' #login='ngForm' (ngSubmit)='onLogin(loginForm.value); loginForm.reset()'>\n                <mat-form-field class='email'>\n                    <input type='text' matInput formControlName='email' placeholder='Email'>\n                </mat-form-field>\n\n                <mat-form-field class='password'>\n                    <input type='password' matInput formControlName='password' placeholder=\"Password\">\n                </mat-form-field>\n\n                <mat-card-actions>\n                    <button mat-raised-button [disabled]='!login.valid' type='submit'>\n                        Log In.\n                    </button>\n                </mat-card-actions>\n            </form>\n        </mat-card-content>\n    </mat-card>\n</div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/main-nav/main-nav.component.html": 
@@ -695,6 +706,7 @@
             /* harmony import */ var _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/contact/contact.component */ "./src/app/components/contact/contact.component.ts");
             /* harmony import */ var _components_about_about_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/about/about.component */ "./src/app/components/about/about.component.ts");
             /* harmony import */ var _components_devops_presentations_devops_presentations_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/devops-presentations/devops-presentations.component */ "./src/app/components/devops-presentations/devops-presentations.component.ts");
+            /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
             var routes = [
                 {
                     path: '',
@@ -712,6 +724,10 @@
                 {
                     path: 'devops-presentations',
                     component: _components_devops_presentations_devops_presentations_component__WEBPACK_IMPORTED_MODULE_6__["DevopsPresentationsComponent"]
+                },
+                {
+                    path: 'login',
+                    component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"]
                 }
             ];
             var AppRoutingModule = /** @class */ (function () {
@@ -798,6 +814,7 @@
             /* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm2015/tabs.js");
             /* harmony import */ var _components_devops_presentations_devops_presentations_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/devops-presentations/devops-presentations.component */ "./src/app/components/devops-presentations/devops-presentations.component.ts");
             /* harmony import */ var mat_video__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! mat-video */ "./node_modules/mat-video/fesm2015/mat-video.js");
+            /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
             var AppModule = /** @class */ (function () {
                 function AppModule() {
                 }
@@ -813,6 +830,7 @@
                         _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_16__["FooterComponent"],
                         _components_main_nav_main_nav_component__WEBPACK_IMPORTED_MODULE_17__["MainNavComponent"],
                         _components_devops_presentations_devops_presentations_component__WEBPACK_IMPORTED_MODULE_23__["DevopsPresentationsComponent"],
+                        _components_login_login_component__WEBPACK_IMPORTED_MODULE_25__["LoginComponent"],
                     ],
                     entryComponents: [_components_contact_contact_component__WEBPACK_IMPORTED_MODULE_13__["ContactComponent"]],
                     imports: [
@@ -1176,6 +1194,75 @@
                     styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home.component.css */ "./src/app/components/home/home.component.css")).default]
                 })
             ], HomeComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/components/login/login.component.css": 
+        /*!******************************************************!*\
+          !*** ./src/app/components/login/login.component.css ***!
+          \******************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = (".login-container {\r\n    max-width: 50%;\r\n}\r\n\r\nmat-form-field {\r\n    width: 100%\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJO0FBQ0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9naW4tY29udGFpbmVyIHtcclxuICAgIG1heC13aWR0aDogNTAlO1xyXG59XHJcblxyXG5tYXQtZm9ybS1maWVsZCB7XHJcbiAgICB3aWR0aDogMTAwJVxyXG59Il19 */");
+            /***/ 
+        }),
+        /***/ "./src/app/components/login/login.component.ts": 
+        /*!*****************************************************!*\
+          !*** ./src/app/components/login/login.component.ts ***!
+          \*****************************************************/
+        /*! exports provided: LoginComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function () { return LoginComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            var LoginComponent = /** @class */ (function () {
+                function LoginComponent(http, fb) {
+                    this.http = http;
+                    this.fb = fb;
+                }
+                // loginForm = this.fb.group({
+                //   email: ["test", [Validators.required, Validators.email]],
+                //   password: ["test", Validators.required]
+                // })
+                LoginComponent.prototype.ngOnInit = function () {
+                    this.loginForm = this.fb.group({
+                        email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].email]],
+                        password: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+                    });
+                };
+                LoginComponent.prototype.onLogin = function (value) {
+                    var _this = this;
+                    this.http.post('/api/login/login', value).subscribe(function (res) {
+                        _this.loginData = res;
+                        console.log(_this.loginData);
+                        if (res) {
+                            localStorage.setItem('token', _this.loginData.token);
+                            localStorage.setItem('isAuthenticated', 'true');
+                            alert('Successfully logged in.');
+                        }
+                        else {
+                            console.log("error");
+                        }
+                    });
+                };
+                return LoginComponent;
+            }());
+            LoginComponent.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+                { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] }
+            ]; };
+            LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-login',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/login/login.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.css */ "./src/app/components/login/login.component.css")).default]
+                })
+            ], LoginComponent);
             /***/ 
         }),
         /***/ "./src/app/components/main-nav/main-nav.component.css": 
