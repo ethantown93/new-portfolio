@@ -1,0 +1,24 @@
+<div class='login-container' fxLayoutAlign='center center'>
+    <mat-card>
+        <mat-card-title>
+            Admin Login
+        </mat-card-title>
+        <mat-card-content>
+            <form [formGroup]='loginForm' #login='ngForm' (ngSubmit)='onLogin(loginForm.value); loginForm.reset()'>
+                <mat-form-field class='email'>
+                    <input type='text' matInput formControlName='email' placeholder='Email'>
+                </mat-form-field>
+
+                <mat-form-field class='password'>
+                    <input type='password' matInput formControlName='password' placeholder="Password">
+                </mat-form-field>
+
+                <mat-card-actions>
+                    <button mat-raised-button [disabled]='!login.valid' type='submit'>
+                        Log In.
+                    </button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
