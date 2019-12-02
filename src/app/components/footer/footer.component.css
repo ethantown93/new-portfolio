@@ -1,13 +1,18 @@
 footer {
     background: #0575E6;
-    height: 60px;
+    height: 80px;
     margin-top: auto;
     position: relative;
     color: white;
     font-family: 'Work Sans', sans-serif;
+    text-align: center;
 }
 
-footer p {
-    text-align: center; 
+footer p { 
     padding-top: 15px;
+}
+
+button {
+    margin: auto !important;
+    padding-bottom: 10px;
 }

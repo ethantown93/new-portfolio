@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { MatDialog, MatDialogConfig} from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginData: any;
   loginForm: FormGroup;
 
-  constructor(private http: HttpClient, private fb: FormBuilder) { }
+  constructor(private dialog: MatDialog, private http: HttpClient, private fb: FormBuilder) { }
 
   // loginForm = this.fb.group({
   //   email: ["test", [Validators.required, Validators.email]],
@@ -33,8 +34,11 @@ export class LoginComponent implements OnInit {
       if(res){
         localStorage.setItem('token', this.loginData.token)
         localStorage.setItem('isAuthenticated', 'true')
+        this.dialog.closeAll()
         alert('Successfully logged in.')
+
       } else {
+        alert("login unsuccessful.")
         console.log("error");
       }
     })
