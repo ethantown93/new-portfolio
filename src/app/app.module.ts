@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
-import { MatDialogModule, MatIconModule, MatMenuModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
+import { MatDialogModule, MatIconModule, MatMenuModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher, MatProgressSpinnerModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
@@ -60,7 +60,8 @@ import { LoginComponent } from './components/login/login.component';
     MatSidenavModule,
     MatListModule,
     MatTabsModule,
-    MatVideoModule
+    MatVideoModule,
+    MatProgressSpinnerModule
   ],
   providers: [{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent]

@@ -396,7 +396,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class='login-container' fxLayoutAlign='center center'>\n    <mat-card>\n        <mat-card-title>\n            Admin Login\n        </mat-card-title>\n        <mat-card-content>\n            <form [formGroup]='loginForm' #login='ngForm' (ngSubmit)='onLogin(loginForm.value); loginForm.reset()'>\n                <mat-form-field class='email'>\n                    <input type='text' matInput formControlName='email' placeholder='Email'>\n                </mat-form-field>\n\n                <mat-form-field class='password'>\n                    <input type='password' matInput formControlName='password' placeholder=\"Password\">\n                </mat-form-field>\n\n                <mat-card-actions>\n                    <button mat-raised-button [disabled]='!login.valid' type='submit'>\n                        Log In.\n                    </button>\n                    <button mat-raised-button color='accent' mat-dialog-close>Cancel</button>\n                </mat-card-actions>\n            </form>\n        </mat-card-content>\n    </mat-card>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class='login-container' fxLayoutAlign='center center'>\r\n    <mat-card>\r\n        <mat-card-title>\r\n            Admin Login\r\n        </mat-card-title>\r\n        <mat-card-content>\r\n            <form [formGroup]='loginForm' #login='ngForm' (ngSubmit)='onLogin(loginForm.value); loginForm.reset()'>\r\n                <mat-form-field class='email'>\r\n                    <input type='text' matInput formControlName='email' placeholder='Email'>\r\n                </mat-form-field>\r\n\r\n                <mat-form-field class='password'>\r\n                    <input type='password' matInput formControlName='password' placeholder=\"Password\">\r\n                </mat-form-field>\r\n\r\n                <mat-card-actions>\r\n                    <button mat-raised-button [disabled]='!login.valid' type='submit'>\r\n                        Log In.\r\n                    </button>\r\n                    <button mat-raised-button color='accent' mat-dialog-close>Cancel</button>\r\n                </mat-card-actions>\r\n            </form>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>");
 
 /***/ }),
 
@@ -409,7 +409,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-sidenav-container class=\"sidenav-container\">\r\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === false\">\r\n    <mat-toolbar class='side-toolbar'>Menu</mat-toolbar>\r\n    <mat-nav-list>\r\n      <ul>\r\n        <li>\r\n          <a routerLink='/'><button mat-button>Home</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/about'><button mat-button>About Me</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/devops-presentations'><button mat-button>DevOps Presentations</button></a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><button mat-button>Diagrams</button></a>\r\n        </li>\r\n      </ul>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar class='primary-toolbar'>\r\n      <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\"\r\n        *ngIf=\"isHandset$ | async\">\r\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n      </button>\r\n      <span class='name'>Ethan's Portfolio</span>\r\n      <span class='nav-link'></span>\r\n      <ul>\r\n        <li>\r\n          <button (click)='openDialog()' mat-raised-button>Contact</button>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/'>Home</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/about'>About Me</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/devops-presentations'>DevOps Presentations</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\">Diagrams</a>\r\n        </li>\r\n      </ul>\r\n    </mat-toolbar>\r\n    <!-- Add Content Here -->\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-sidenav-container class=\"sidenav-container\">\r\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === false\">\r\n    <mat-toolbar class='side-toolbar'>Menu</mat-toolbar>\r\n    <mat-nav-list>\r\n      <ul>\r\n        <li>\r\n          <a routerLink='/'><button mat-button>Home</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/about'><button mat-button>About Me</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/devops-presentations'><button mat-button>DevOps Presentations</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/resume'><button mat-button>My Resume</button></a>\r\n        </li>\r\n      </ul>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar class='primary-toolbar'>\r\n      <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\"\r\n        *ngIf=\"isHandset$ | async\">\r\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n      </button>\r\n      <span class='name'>Ethan's Portfolio</span>\r\n      <span class='nav-link'></span>\r\n      <ul>\r\n        <li>\r\n          <button (click)='openDialog()' mat-raised-button>Contact</button>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/'>Home</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/about'>About Me</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/devops-presentations'>DevOps Presentations</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/resume'><button mat-button>My Resume</button></a>\r\n        </li>\r\n      </ul>\r\n    </mat-toolbar>\r\n    <!-- Add Content Here -->\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>");
 
 /***/ }),
 
@@ -689,7 +689,7 @@ const routes = [
     {
         path: 'login',
         component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"]
-    }
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -847,7 +847,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_20__["MatSidenavModule"],
             _angular_material_list__WEBPACK_IMPORTED_MODULE_21__["MatListModule"],
             _angular_material_tabs__WEBPACK_IMPORTED_MODULE_22__["MatTabsModule"],
-            mat_video__WEBPACK_IMPORTED_MODULE_24__["MatVideoModule"]
+            mat_video__WEBPACK_IMPORTED_MODULE_24__["MatVideoModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatProgressSpinnerModule"]
         ],
         providers: [{ provide: _angular_material__WEBPACK_IMPORTED_MODULE_7__["ErrorStateMatcher"], useClass: _angular_material__WEBPACK_IMPORTED_MODULE_7__["ShowOnDirtyErrorStateMatcher"] }],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1153,6 +1154,7 @@ let HomeComponent = class HomeComponent {
         this.barChart = [];
         this.languagesValue = [];
         this.languageNames = [];
+        this.isLoading = false;
     }
     ngOnInit() {
         this.http.get('/api/languages').subscribe(res => {

@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   languagesData: any;
   languagesValue: any = [];
   languageNames: any = [];
+  isLoading = false;
 
   constructor(private http: HttpClient) { }
 
@@ -96,6 +97,5 @@ export class HomeComponent implements OnInit {
     }
     });
   }
-
-
 }
+
