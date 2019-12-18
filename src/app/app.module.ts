@@ -24,6 +24,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { DevopsPresentationsComponent } from './components/devops-presentations/devops-presentations.component';
 import { MatVideoModule } from 'mat-video';
 import { LoginComponent } from './components/login/login.component';
+import { ResumeComponent } from './components/resume/resume.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { LoginComponent } from './components/login/login.component';
     MainNavComponent,
     DevopsPresentationsComponent,
     LoginComponent,
+    ResumeComponent,
   ],
   entryComponents: [ContactComponent],
   imports: [
