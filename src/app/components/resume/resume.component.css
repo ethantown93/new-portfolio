@@ -1,0 +1,16 @@
+.resume {
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+mat-card {
+    height: 90vh;
+    width: 100%;
+}
+
+mat-card > embed {
+    height: 100%;
+    width: 100%;
+}
