@@ -5,7 +5,7 @@
         <a href="https://www.linkedin.com/in/ethan-townsend-15320a10b/" target='blank' class="linkedin"><i class="fa fa-linkedin"></i></a>
       </div>
 
-<div class='container'>
+<div class='container' data-aos='fade-up'>
     <div class='personal'>
         <h1>
             Husband, Full-Stack Developer, and Novice Designer
@@ -17,7 +17,7 @@
     </div>
 
     <div id='first-div'>
-        <div class='first-div-content'>
+        <div class='first-div-content' data-aos='fade-up'>
             <h2>
                 Hi, I'm Ethan. It's a Pleasure to meet you.
             </h2>
@@ -34,17 +34,17 @@
     </div>
         <mat-card class='skillsets-card'>
             <h3>My Skillsets</h3>
-            <canvas id='barChart'></canvas>
+            <canvas id='barChart' data-aos='fade-up'></canvas>
         </mat-card>
 
 </div>
 
 <hr>
-<div class='main'>
+<div class='main' >
     <mat-card class='main-card' *ngIf='error === false'>
         <h2>My Recent Projects</h2>
         <ul class='main-1'>
-            <li class='home-container' *ngFor='let project of projects'>
+            <li class='home-container' *ngFor='let project of projects' data-aos='fade-up'>
                 <div class='home-container-card'>
                     <div class='card-back'>
                         <p>{{ project.description }}</p>

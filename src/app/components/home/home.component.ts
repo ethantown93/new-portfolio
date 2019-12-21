@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chart } from 'chart.js';
-
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+
+    AOS.init();
 
     this.http.get('/api/languages').subscribe( res => {
       if(res){
