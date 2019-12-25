@@ -28,8 +28,23 @@ router.post('/login', (req, res, next) => {
         const token = jwt.sign({ userId: foundUser._id }, "this_is_my_secret_key", { expiresIn: '2h' })
         res.status(200).json({
             token: token,
-            userId: foundUser._id
+            userId: foundUser._id,
+            role: foundUser.role
         });
+    });
+});
+
+// find user role by id
+
+router.get('/user:id', (req, res, next) => {
+    User.findOne({_id: req.params.id}, (err, role) => {
+        if(err) {
+            res.json({
+                message: 'No user found'
+            })
+        } else {
+            res.json(role.role);
+        }
     });
 });
 

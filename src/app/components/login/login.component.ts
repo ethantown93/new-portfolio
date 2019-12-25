@@ -15,11 +15,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private dialog: MatDialog, private http: HttpClient, private fb: FormBuilder) { }
 
-  // loginForm = this.fb.group({
-  //   email: ["test", [Validators.required, Validators.email]],
-  //   password: ["test", Validators.required]
-  // })
-
   ngOnInit() {
     this.loginForm = this.fb.group({
       email: ["", [Validators.required, Validators.email]],
@@ -32,8 +27,9 @@ export class LoginComponent implements OnInit {
       this.loginData = res;
       console.log(this.loginData);
       if(res){
-        localStorage.setItem('token', this.loginData.token)
-        localStorage.setItem('isAuthenticated', 'true')
+        localStorage.setItem('token', this.loginData.token);
+        localStorage.setItem('userId', this.loginData.userId);
+        localStorage.setItem('role', this.loginData.role)
         this.dialog.closeAll()
         alert('Successfully logged in.')
 
