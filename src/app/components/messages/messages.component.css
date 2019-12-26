@@ -1,0 +1,38 @@
+.container{
+    margin-top: 50px;
+    text-align: center;
+}
+
+mat-card {
+    font-family: 'Work Sans', sans-serif;
+    width: 80%;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin: 15px;
+}
+
+table {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+th {
+    margin: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd
+}
+
+td {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

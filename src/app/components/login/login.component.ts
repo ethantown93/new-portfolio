@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogConfig} from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginData: any;
   loginForm: FormGroup;
 
-  constructor(private dialog: MatDialog, private http: HttpClient, private fb: FormBuilder) { }
+  constructor(private router: Router, private dialog: MatDialog, private http: HttpClient, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({

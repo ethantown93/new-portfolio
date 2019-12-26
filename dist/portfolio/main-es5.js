@@ -383,7 +383,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-card flex *ngIf='messageSaved === false'>\r\n    <h2>Please Fill out the Form</h2>\r\n    <hr>\r\n    <form #contactform [formGroup]='contactForm' (ngSubmit)='onSubmit(contactForm.value); contactform.reset()'>\r\n        <mat-form-field>\r\n            <input required matInput type='text' placeholder='Name' formControlName='name'>\r\n            <small class='error' *ngIf=\"!contactForm.get('name').valid && contactForm.get('name').touched\">\r\n                <mat-icon>report_problem</mat-icon> *Please enter your name\r\n            </small>\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n            <input required matInput type='text' placeholder='Email' formControlName='email'>\r\n            <small class='error' *ngIf=\"!contactForm.get('email').valid && contactForm.get('email').touched\"><mat-icon>report_problem</mat-icon> *Please\r\n                enter your email</small>\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n            <textarea required matInput type='text' placeholder='Message (20 characters minimum)' formControlName='message'></textarea>\r\n            <small class='error' *ngIf=\"!contactForm.get('message').valid && contactForm.get('message').touched\"><mat-icon>report_problem</mat-icon> *Please\r\n                leave a message</small>\r\n        </mat-form-field>\r\n\r\n        <button [disabled]='!contactForm.valid' mat-raised-button color='primary' type='submit'>Submit</button>\r\n        <button mat-raised-button color='accent' mat-dialog-close>Cancel</button>\r\n    </form>\r\n    <br/>\r\n    <hr>\r\n    <h3>Alternatively, you can contact me via email or social media.</h3>\r\n    <p>My email is <strong>EETfitness@gmail (dot) com</strong></p>\r\n    \r\n</mat-card>\r\n\r\n<mat-card *ngIf='messageSaved === true'>\r\n    <mat-icon class='done-icon'>check_circle_outline</mat-icon><h2>Thank you. Your message has been received!</h2>\r\n    <button mat-raised-button color='primary' mat-dialog-close>Close</button>\r\n</mat-card>";
+    __webpack_exports__["default"] = "<mat-card flex *ngIf='messageSaved === false'>\r\n    <h2>Please Fill out the Form</h2>\r\n    <hr>\r\n    <form #contactform [formGroup]='contactForm' (ngSubmit)='onSubmit(contactForm.value); contactform.reset()'>\r\n        <mat-form-field>\r\n            <input required matInput type='text' placeholder='Name' formControlName='name'>\r\n            <small class='error' *ngIf=\"!contactForm.get('name').valid && contactForm.get('name').touched\">\r\n                *Please enter your name\r\n            </small>\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n            <input required matInput type='text' placeholder='Email' formControlName='email'>\r\n            <small class='error' *ngIf=\"!contactForm.get('email').valid && contactForm.get('email').touched\">*Please\r\n                enter your email</small>\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n            <textarea required matInput type='text' placeholder='Message (20 characters minimum)' formControlName='message'></textarea>\r\n            <small class='error' *ngIf=\"!contactForm.get('message').valid && contactForm.get('message').touched\">*Please\r\n                leave a message</small>\r\n        </mat-form-field>\r\n\r\n        <button [disabled]='!contactForm.valid' mat-raised-button color='primary' type='submit'>Submit</button>\r\n        <button mat-raised-button color='accent' mat-dialog-close>Cancel</button>\r\n    </form>\r\n    <br/>\r\n    <hr>\r\n    <h3>Alternatively, you can contact me via email or social media.</h3>\r\n    <p>My email is <strong>EETfitness@gmail (dot) com</strong></p>\r\n    \r\n</mat-card>\r\n\r\n<mat-card *ngIf='messageSaved === true'>\r\n    <mat-icon class='done-icon'>check_circle_outline</mat-icon><h2>Thank you. Your message has been received!</h2>\r\n    <button mat-raised-button color='primary' mat-dialog-close>Close</button>\r\n</mat-card>";
     /***/
   },
 
@@ -483,7 +483,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-sidenav-container class=\"sidenav-container\">\r\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === false\">\r\n    <mat-toolbar class='side-toolbar'>Menu</mat-toolbar>\r\n    <mat-nav-list>\r\n      <ul>\r\n        <li>\r\n          <a routerLink='/'><button mat-button>Home</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/about'><button mat-button>About Me</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/devops-presentations'><button mat-button>DevOps Presentations</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/resume'><button mat-button>My Resume</button></a>\r\n        </li>\r\n      </ul>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar class='primary-toolbar'>\r\n      <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\"\r\n        *ngIf=\"isHandset$ | async\">\r\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n      </button>\r\n      <span class='name'>Ethan's Portfolio</span>\r\n      <span class='nav-link'></span>\r\n      <ul>\r\n        <li>\r\n          <button (click)='openDialog()' mat-raised-button>Contact</button>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/'>Home</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/about'>About Me</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/devops-presentations'>DevOps Presentations</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/resume'>My Resume</a>\r\n        </li>\r\n      </ul>\r\n    </mat-toolbar>\r\n    <!-- Add Content Here -->\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>";
+    __webpack_exports__["default"] = "<mat-sidenav-container class=\"sidenav-container\">\r\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === false\">\r\n    <mat-toolbar class='side-toolbar'>Menu</mat-toolbar>\r\n    <mat-nav-list>\r\n      <ul>\r\n        <li>\r\n          <a routerLink='/'><button mat-button>Home</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/about'><button mat-button>About Me</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/devops-presentations'><button mat-button>DevOps Presentations</button></a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/resume'><button mat-button>My Resume</button></a>\r\n        </li>\r\n      </ul>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar class='primary-toolbar'>\r\n      <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\"\r\n        *ngIf=\"isHandset$ | async\">\r\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n      </button>\r\n      <span class='name'>Ethan's Portfolio</span>\r\n      <span class='nav-link'></span>\r\n      <ul>\r\n        <li>\r\n          <button (click)='openDialog()' mat-raised-button>Contact</button>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/'>Home</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/about'>About Me</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/devops-presentations'>DevOps Presentations</a>\r\n        </li>\r\n        <li>\r\n          <a routerLink='/resume'>My Resume</a>\r\n        </li>\r\n        <li *ngIf='isAdmin'>\r\n          <a routerLink='/messages'>My Messages</a>\r\n        </li>\r\n        <li *ngIf='isAdmin'>\r\n          <a (click)='onLogout()'>Logout</a>\r\n        </li>\r\n      </ul>\r\n    </mat-toolbar>\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>";
     /***/
   },
 
@@ -503,7 +503,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<p>messages works!</p>\n";
+    __webpack_exports__["default"] = "<div class='container'>\n    <mat-card>\n        <h2>My Messages</h2>\n        <table>\n            <tr>\n                <th>\n                    Name\n                </th>\n                <th>\n                    Email\n                </th>\n                <th>\n                    Message\n                </th>\n                <th>\n                    Date\n                </th>\n            </tr>\n            <tr *ngFor='let message of messages'>\n                <td>\n                    {{message.name}}\n                </td>\n                <td>\n                    {{message.email}}\n                </td>\n                <td>\n                    {{message.message}}\n                </td>\n                <td>\n                    {{message.date | date}}\n                </td>\n            </tr>\n        </table>\n    </mat-card>\n</div>";
     /***/
   },
 
@@ -2223,13 +2223,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/material */
     "./node_modules/@angular/material/esm2015/material.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
 
     var LoginComponent =
     /*#__PURE__*/
     function () {
-      function LoginComponent(dialog, http, fb) {
+      function LoginComponent(router, dialog, http, fb) {
         _classCallCheck(this, LoginComponent);
 
+        this.router = router;
         this.dialog = dialog;
         this.http = http;
         this.fb = fb;
@@ -2259,6 +2266,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               _this4.dialog.closeAll();
 
+              _this4.router.navigate(['/']);
+
               alert('Successfully logged in.');
             } else {
               alert("login unsuccessful.");
@@ -2273,6 +2282,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     LoginComponent.ctorParameters = function () {
       return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+      }, {
         type: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]
       }, {
         type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
@@ -2368,21 +2379,46 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _contact_contact_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../contact/contact.component */
     "./src/app/components/contact/contact.component.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
 
     var MainNavComponent =
     /*#__PURE__*/
     function () {
-      function MainNavComponent(breakpointObserver, dialog) {
+      function MainNavComponent(router, breakpointObserver, dialog) {
         _classCallCheck(this, MainNavComponent);
 
+        this.router = router;
         this.breakpointObserver = breakpointObserver;
         this.dialog = dialog;
+        this.isAdmin = false;
         this.isHandset$ = this.breakpointObserver.observe(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__["Breakpoints"].Handset).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (result) {
           return result.matches;
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["shareReplay"])());
       }
 
       _createClass(MainNavComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.checkAdmin();
+        }
+      }, {
+        key: "checkAdmin",
+        value: function checkAdmin() {
+          var adminCheck = localStorage.getItem('role');
+          console.log(adminCheck);
+
+          if (adminCheck === 'admin') {
+            this.isAdmin = true;
+          } else {
+            this.isAdmin = false;
+          }
+        }
+      }, {
         key: "openDialog",
         value: function openDialog() {
           var dialogRef = this.dialog.open(_contact_contact_component__WEBPACK_IMPORTED_MODULE_5__["ContactComponent"], {
@@ -2392,6 +2428,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             console.log('The dialog was closed');
           });
         }
+      }, {
+        key: "onLogout",
+        value: function onLogout() {
+          localStorage.clear();
+          this.router.navigate(['/']);
+        }
       }]);
 
       return MainNavComponent;
@@ -2399,6 +2441,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     MainNavComponent.ctorParameters = function () {
       return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]
+      }, {
         type: _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__["BreakpointObserver"]
       }, {
         type: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]
@@ -2433,7 +2477,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVzc2FnZXMvbWVzc2FnZXMuY29tcG9uZW50LmNzcyJ9 */";
+    __webpack_exports__["default"] = ".container{\r\n    margin-top: 50px;\r\n    text-align: center;\r\n}\r\n\r\nmat-card {\r\n    font-family: 'Work Sans', sans-serif;\r\n    width: 80%;\r\n    margin: auto;\r\n}\r\n\r\nh2 {\r\n    text-align: center;\r\n    margin: 15px;\r\n}\r\n\r\ntable {\r\n    border: 1px solid black;\r\n    border-radius: 4px;\r\n    padding: 20px;\r\n    width: 100%;\r\n    margin: auto;\r\n}\r\n\r\nth {\r\n    margin: 10px;\r\n}\r\n\r\ntr:nth-child(even) {\r\n    background-color: #dddddd\r\n}\r\n\r\ntd {\r\n    padding-right: 30px;\r\n    padding-left: 30px;\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZXNzYWdlcy9tZXNzYWdlcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLG9DQUFvQztJQUNwQyxVQUFVO0lBQ1YsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixhQUFhO0lBQ2IsV0FBVztJQUNYLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxZQUFZO0FBQ2hCOztBQUVBO0lBQ0k7QUFDSjs7QUFFQTtJQUNJLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsaUJBQWlCO0lBQ2pCLG9CQUFvQjtBQUN4QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVzc2FnZXMvbWVzc2FnZXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXJ7XHJcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG5tYXQtY2FyZCB7XHJcbiAgICBmb250LWZhbWlseTogJ1dvcmsgU2FucycsIHNhbnMtc2VyaWY7XHJcbiAgICB3aWR0aDogODAlO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG59XHJcblxyXG5oMiB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW46IDE1cHg7XHJcbn1cclxuXHJcbnRhYmxlIHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG59XHJcblxyXG50aCB7XHJcbiAgICBtYXJnaW46IDEwcHg7XHJcbn1cclxuXHJcbnRyOm50aC1jaGlsZChldmVuKSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkZGRkXHJcbn1cclxuXHJcbnRkIHtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDMwcHg7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDMwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMTBweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAxMHB4O1xyXG59Il19 */";
     /***/
   },
 
@@ -2468,21 +2512,49 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
 
     var MessagesComponent =
     /*#__PURE__*/
     function () {
-      function MessagesComponent() {
+      function MessagesComponent(http) {
         _classCallCheck(this, MessagesComponent);
+
+        this.http = http;
+        this.messages = [];
       }
 
       _createClass(MessagesComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          var _this5 = this;
+
+          this.http.get('/api/m/read-messages').subscribe(function (res) {
+            if (res) {
+              console.log(res);
+              _this5.messages = res;
+            } else if (!res) {
+              alert('No messages were found at this time');
+            } else {
+              alert('Server error');
+            }
+          });
+        }
       }]);
 
       return MessagesComponent;
     }();
+
+    MessagesComponent.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }];
+    };
 
     MessagesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-messages',
@@ -2638,7 +2710,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RoleGuardService, [{
         key: "canActivate",
         value: function canActivate(route, state) {
-          var _this5 = this;
+          var _this6 = this;
 
           return this.findUserRole().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) {
             var role = res;
@@ -2648,7 +2720,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             } else {
               alert("You're not authorized to access that page.");
 
-              _this5.router.navigate(["/"]);
+              _this6.router.navigate(["/"]);
 
               return false;
             }
