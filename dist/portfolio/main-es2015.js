@@ -426,6 +426,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/page-not-found/page-not-found.component.html":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/page-not-found/page-not-found.component.html ***!
+  \***************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class='error-container'>\n    <mat-card>\n     \n            <button (click)='backHome()' mat-raised-button>Home</button>\n               \n    </mat-card>\n</div>>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/resume/resume.component.html":
 /*!***********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/resume/resume.component.html ***!
@@ -689,6 +702,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_resume_resume_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/resume/resume.component */ "./src/app/components/resume/resume.component.ts");
 /* harmony import */ var _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/messages/messages.component */ "./src/app/components/messages/messages.component.ts");
 /* harmony import */ var _guards_role_guard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./guards/role.guard */ "./src/app/guards/role.guard.ts");
+/* harmony import */ var _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/page-not-found/page-not-found.component */ "./src/app/components/page-not-found/page-not-found.component.ts");
+
 
 
 
@@ -730,6 +745,10 @@ const routes = [
         path: 'messages',
         component: _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_9__["MessagesComponent"],
         canActivate: [_guards_role_guard__WEBPACK_IMPORTED_MODULE_10__["RoleGuardService"]]
+    },
+    {
+        path: '**',
+        component: _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_11__["PageNotFoundComponent"]
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -828,6 +847,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
 /* harmony import */ var _components_about_about_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/about/about.component */ "./src/app/components/about/about.component.ts");
+/* harmony import */ var _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/page-not-found/page-not-found.component */ "./src/app/components/page-not-found/page-not-found.component.ts");
+
 
 
 
@@ -872,6 +893,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_login_login_component__WEBPACK_IMPORTED_MODULE_21__["LoginComponent"],
             _components_resume_resume_component__WEBPACK_IMPORTED_MODULE_22__["ResumeComponent"],
             _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_23__["MessagesComponent"],
+            _components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_29__["PageNotFoundComponent"],
         ],
         entryComponents: [_components_contact_contact_component__WEBPACK_IMPORTED_MODULE_25__["ContactComponent"]],
         imports: [
@@ -1358,7 +1380,6 @@ let LoginComponent = class LoginComponent {
                 localStorage.setItem('userId', this.loginData.userId);
                 localStorage.setItem('role', this.loginData.role);
                 this.dialog.closeAll();
-                this.router.navigate(['/']);
                 alert('Successfully logged in.');
             }
             else {
@@ -1534,6 +1555,60 @@ MessagesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./messages.component.css */ "./src/app/components/messages/messages.component.css")).default]
     })
 ], MessagesComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/page-not-found/page-not-found.component.css":
+/*!************************************************************************!*\
+  !*** ./src/app/components/page-not-found/page-not-found.component.css ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".error-container {\r\n    width: 40%;\r\n    margin: auto;\r\n    height: 420px;\r\n    margin-top: 50px;\r\n    text-align: center;\r\n    font-family: 'Work Sans', sans-serif;\r\n\r\n}\r\n\r\nmat-card {\r\n    margin: auto;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-image: url('/assets/images/404.png');\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    background-repeat: no-repeat;\r\n    color: white;\r\n}\r\n\r\nbutton {\r\n    width: 30%;\r\n    position: absolute;\r\n    top: 60%;\r\n    right: 33%;\r\n    background-color: #0575E6 ;\r\n    color: white;\r\n}\r\n\r\n/* .error-div {\r\n    background-color: rgba(5, 118, 230, 0.815);\r\n    width: 30%;\r\n    height: 30%;\r\n    padding: 20px;\r\n    margin: auto;\r\n    border-radius: 8px;\r\n} */\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wYWdlLW5vdC1mb3VuZC9wYWdlLW5vdC1mb3VuZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7SUFDWixhQUFhO0lBQ2IsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixvQ0FBb0M7O0FBRXhDOztBQUVBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWixXQUFXO0lBQ1gsK0NBQStDO0lBQy9DLG9CQUFpQjtPQUFqQixpQkFBaUI7SUFDakIsNEJBQTRCO0lBQzVCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLFFBQVE7SUFDUixVQUFVO0lBQ1YsMEJBQTBCO0lBQzFCLFlBQVk7QUFDaEI7O0FBRUE7Ozs7Ozs7R0FPRyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGFnZS1ub3QtZm91bmQvcGFnZS1ub3QtZm91bmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5lcnJvci1jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDQwJTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIGhlaWdodDogNDIwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC1mYW1pbHk6ICdXb3JrIFNhbnMnLCBzYW5zLXNlcmlmO1xyXG5cclxufVxyXG5cclxubWF0LWNhcmQge1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy9hc3NldHMvaW1hZ2VzLzQwNC5wbmcnKTtcclxuICAgIG9iamVjdC1maXQ6IGNvdmVyO1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIHdpZHRoOiAzMCU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDYwJTtcclxuICAgIHJpZ2h0OiAzMyU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDU3NUU2IDtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLyogLmVycm9yLWRpdiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDUsIDExOCwgMjMwLCAwLjgxNSk7XHJcbiAgICB3aWR0aDogMzAlO1xyXG4gICAgaGVpZ2h0OiAzMCU7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG59ICovIl19 */");
+
+/***/ }),
+
+/***/ "./src/app/components/page-not-found/page-not-found.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/page-not-found/page-not-found.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: PageNotFoundComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageNotFoundComponent", function() { return PageNotFoundComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+let PageNotFoundComponent = class PageNotFoundComponent {
+    constructor(router) {
+        this.router = router;
+    }
+    ngOnInit() {
+    }
+    backHome() {
+        this.router.navigate(['/']);
+    }
+};
+PageNotFoundComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+PageNotFoundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-page-not-found',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./page-not-found.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/page-not-found/page-not-found.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./page-not-found.component.css */ "./src/app/components/page-not-found/page-not-found.component.css")).default]
+    })
+], PageNotFoundComponent);
 
 
 

@@ -29,6 +29,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { AboutComponent } from './components/about/about.component';
     LoginComponent,
     ResumeComponent,
     MessagesComponent,
+    PageNotFoundComponent,
   ],
   entryComponents: [ContactComponent],
   imports: [

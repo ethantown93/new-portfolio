@@ -9,6 +9,7 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { MessagesComponent } from './components/messages/messages.component';
 
 import { RoleGuardService } from './guards/role.guard';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
 
@@ -41,6 +42,10 @@ const routes: Routes = [
     path: 'messages',
     component: MessagesComponent,
     canActivate: [RoleGuardService]
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 
