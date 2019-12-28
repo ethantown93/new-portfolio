@@ -17,10 +17,10 @@
           <a routerLink='/resume'><button mat-button>My Resume</button></a>
         </li>
         <li *ngIf='isAdmin'>
-          <a routerLink='/messages'>My Messages</a>
+          <a routerLink='/messages'><button mat-button>My Messages</button></a>
         </li>
         <li *ngIf='isAdmin'>
-          <a (click)='onLogout()'>Logout</a>
+          <a (click)='onLogout()'><button mat-button>Logout</button></a>
         </li>
       </ul>
     </mat-nav-list>
