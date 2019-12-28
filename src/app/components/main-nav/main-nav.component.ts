@@ -25,7 +25,6 @@ export class MainNavComponent {
   constructor(private updateNav: UpdateNavService, private router: Router, private breakpointObserver: BreakpointObserver, private dialog: MatDialog) {}
 
   ngOnInit(){
-
     this.updateNav.updateNavBar$.subscribe(method => {
       if(method) {
         method();
@@ -49,19 +48,8 @@ export class MainNavComponent {
 
   onLogout(){
     localStorage.clear();
-    this.updateNav.updateNav(this.checkAdmin);
     this.isAdmin = false;
     this.router.navigate(['/']);
-  }
-
-  checkAdmin(){
-    let adminCheck = localStorage.getItem('role');
-    console.log(adminCheck)
-     if(adminCheck === 'admin'){
-        return;
-     } else {
-        console.log('user is not an admin');
-     }  
   }
 
 }

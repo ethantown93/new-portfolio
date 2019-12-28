@@ -2299,7 +2299,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.http.post('/api/login/login', value).subscribe(function (res) {
             _this4.loginData = res;
-            console.log(_this4.loginData);
 
             if (res) {
               localStorage.setItem('token', _this4.loginData.token);
@@ -2313,7 +2312,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               alert('Successfully logged in.');
             } else {
               alert("login unsuccessful.");
-              console.log("error");
             }
           });
         }
@@ -2321,7 +2319,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "checkAdmin",
         value: function checkAdmin() {
           var adminCheck = localStorage.getItem('role');
-          console.log(adminCheck);
 
           if (adminCheck === 'admin') {
             return;
@@ -2491,22 +2488,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onLogout",
         value: function onLogout() {
-          localStorage.clear();
-          this.updateNav.updateNav(this.checkAdmin);
+          localStorage.clear(); // this.updateNav.updateNav(this.checkAdmin);
+
           this.isAdmin = false;
           this.router.navigate(['/']);
-        }
-      }, {
-        key: "checkAdmin",
-        value: function checkAdmin() {
-          var adminCheck = localStorage.getItem('role');
-          console.log(adminCheck);
-
-          if (adminCheck === 'admin') {
-            return;
-          } else {
-            console.log('user is not an admin');
-          }
         }
       }]);
 
@@ -3099,7 +3084,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\EETfi\new-portfolio\src\main.ts */
+    /*! c:\Users\EETfi\new-portfolio\src\main.ts */
     "./src/main.ts");
     /***/
   }

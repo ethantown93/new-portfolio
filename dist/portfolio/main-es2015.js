@@ -1377,7 +1377,6 @@ let LoginComponent = class LoginComponent {
     onLogin(value) {
         this.http.post('/api/login/login', value).subscribe(res => {
             this.loginData = res;
-            console.log(this.loginData);
             if (res) {
                 localStorage.setItem('token', this.loginData.token);
                 localStorage.setItem('userId', this.loginData.userId);
@@ -1388,13 +1387,11 @@ let LoginComponent = class LoginComponent {
             }
             else {
                 alert("login unsuccessful.");
-                console.log("error");
             }
         });
     }
     checkAdmin() {
         let adminCheck = localStorage.getItem('role');
-        console.log(adminCheck);
         if (adminCheck === 'admin') {
             return;
         }
@@ -1492,19 +1489,9 @@ let MainNavComponent = class MainNavComponent {
     }
     onLogout() {
         localStorage.clear();
-        this.updateNav.updateNav(this.checkAdmin);
+        // this.updateNav.updateNav(this.checkAdmin);
         this.isAdmin = false;
         this.router.navigate(['/']);
-    }
-    checkAdmin() {
-        let adminCheck = localStorage.getItem('role');
-        console.log(adminCheck);
-        if (adminCheck === 'admin') {
-            return;
-        }
-        else {
-            console.log('user is not an admin');
-        }
     }
 };
 MainNavComponent.ctorParameters = () => [
@@ -1845,7 +1832,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\EETfi\new-portfolio\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! c:\Users\EETfi\new-portfolio\src\main.ts */"./src/main.ts");
 
 
 /***/ })

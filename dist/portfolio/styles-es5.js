@@ -400,11 +400,11 @@
   /***/
   function _(module, exports, __webpack_require__) {
     __webpack_require__(
-    /*! C:\Users\EETfi\new-portfolio\src\styles.css */
+    /*! c:\Users\EETfi\new-portfolio\src\styles.css */
     "./src/styles.css");
 
     module.exports = __webpack_require__(
-    /*! C:\Users\EETfi\new-portfolio\node_modules\aos\dist\aos.css */
+    /*! c:\Users\EETfi\new-portfolio\node_modules\aos\dist\aos.css */
     "./node_modules/aos/dist/aos.css");
     /***/
   }
