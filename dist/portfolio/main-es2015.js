@@ -1352,6 +1352,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_update_nav_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/update-nav.service */ "./src/app/services/update-nav.service.ts");
+
 
 
 
@@ -1359,11 +1361,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginComponent = class LoginComponent {
-    constructor(router, dialog, http, fb) {
+    constructor(router, dialog, http, fb, updateNav) {
         this.router = router;
         this.dialog = dialog;
         this.http = http;
         this.fb = fb;
+        this.updateNav = updateNav;
     }
     ngOnInit() {
         this.loginForm = this.fb.group({
@@ -1380,6 +1383,7 @@ let LoginComponent = class LoginComponent {
                 localStorage.setItem('userId', this.loginData.userId);
                 localStorage.setItem('role', this.loginData.role);
                 this.dialog.closeAll();
+                this.updateNav.updateNav(this.checkAdmin);
                 alert('Successfully logged in.');
             }
             else {
@@ -1388,12 +1392,23 @@ let LoginComponent = class LoginComponent {
             }
         });
     }
+    checkAdmin() {
+        let adminCheck = localStorage.getItem('role');
+        console.log(adminCheck);
+        if (adminCheck === 'admin') {
+            return;
+        }
+        else {
+            alert('user is not an admin');
+        }
+    }
 };
 LoginComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"] },
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] }
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
+    { type: _services_update_nav_service__WEBPACK_IMPORTED_MODULE_6__["UpdateNavService"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1437,6 +1452,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../contact/contact.component */ "./src/app/components/contact/contact.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_update_nav_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/update-nav.service */ "./src/app/services/update-nav.service.ts");
+
 
 
 
@@ -1445,7 +1462,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let MainNavComponent = class MainNavComponent {
-    constructor(router, breakpointObserver, dialog) {
+    constructor(updateNav, router, breakpointObserver, dialog) {
+        this.updateNav = updateNav;
         this.router = router;
         this.breakpointObserver = breakpointObserver;
         this.dialog = dialog;
@@ -1454,17 +1472,15 @@ let MainNavComponent = class MainNavComponent {
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(result => result.matches), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["shareReplay"])());
     }
     ngOnInit() {
-        this.checkAdmin();
-    }
-    checkAdmin() {
-        let adminCheck = localStorage.getItem('role');
-        console.log(adminCheck);
-        if (adminCheck === 'admin') {
-            this.isAdmin = true;
-        }
-        else {
-            this.isAdmin = false;
-        }
+        this.updateNav.updateNavBar$.subscribe(method => {
+            if (method) {
+                method();
+                this.isAdmin = true;
+            }
+            else {
+                alert('no message received');
+            }
+        });
     }
     openDialog() {
         const dialogRef = this.dialog.open(_contact_contact_component__WEBPACK_IMPORTED_MODULE_5__["ContactComponent"], {
@@ -1476,10 +1492,23 @@ let MainNavComponent = class MainNavComponent {
     }
     onLogout() {
         localStorage.clear();
+        this.updateNav.updateNav(this.checkAdmin);
+        this.isAdmin = false;
         this.router.navigate(['/']);
+    }
+    checkAdmin() {
+        let adminCheck = localStorage.getItem('role');
+        console.log(adminCheck);
+        if (adminCheck === 'admin') {
+            return;
+        }
+        else {
+            console.log('user is not an admin');
+        }
     }
 };
 MainNavComponent.ctorParameters = () => [
+    { type: _services_update_nav_service__WEBPACK_IMPORTED_MODULE_7__["UpdateNavService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
     { type: _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__["BreakpointObserver"] },
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"] }
@@ -1569,7 +1598,7 @@ MessagesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".error-container {\r\n    width: 40%;\r\n    margin: auto;\r\n    height: 420px;\r\n    margin-top: 50px;\r\n    text-align: center;\r\n    font-family: 'Work Sans', sans-serif;\r\n\r\n}\r\n\r\nmat-card {\r\n    margin: auto;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-image: url('/assets/images/404.png');\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    background-repeat: no-repeat;\r\n    color: white;\r\n}\r\n\r\nbutton {\r\n    width: 30%;\r\n    position: absolute;\r\n    top: 60%;\r\n    right: 33%;\r\n    background-color: #0575E6 ;\r\n    color: white;\r\n}\r\n\r\n/* .error-div {\r\n    background-color: rgba(5, 118, 230, 0.815);\r\n    width: 30%;\r\n    height: 30%;\r\n    padding: 20px;\r\n    margin: auto;\r\n    border-radius: 8px;\r\n} */\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wYWdlLW5vdC1mb3VuZC9wYWdlLW5vdC1mb3VuZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7SUFDWixhQUFhO0lBQ2IsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixvQ0FBb0M7O0FBRXhDOztBQUVBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWixXQUFXO0lBQ1gsK0NBQStDO0lBQy9DLG9CQUFpQjtPQUFqQixpQkFBaUI7SUFDakIsNEJBQTRCO0lBQzVCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLFFBQVE7SUFDUixVQUFVO0lBQ1YsMEJBQTBCO0lBQzFCLFlBQVk7QUFDaEI7O0FBRUE7Ozs7Ozs7R0FPRyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGFnZS1ub3QtZm91bmQvcGFnZS1ub3QtZm91bmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5lcnJvci1jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDQwJTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIGhlaWdodDogNDIwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC1mYW1pbHk6ICdXb3JrIFNhbnMnLCBzYW5zLXNlcmlmO1xyXG5cclxufVxyXG5cclxubWF0LWNhcmQge1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy9hc3NldHMvaW1hZ2VzLzQwNC5wbmcnKTtcclxuICAgIG9iamVjdC1maXQ6IGNvdmVyO1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIHdpZHRoOiAzMCU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDYwJTtcclxuICAgIHJpZ2h0OiAzMyU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDU3NUU2IDtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLyogLmVycm9yLWRpdiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDUsIDExOCwgMjMwLCAwLjgxNSk7XHJcbiAgICB3aWR0aDogMzAlO1xyXG4gICAgaGVpZ2h0OiAzMCU7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG59ICovIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".error-container {\r\n    width: 40%;\r\n    margin: auto;\r\n    height: 420px;\r\n    margin-top: 50px;\r\n    text-align: center;\r\n    font-family: 'Work Sans', sans-serif;\r\n\r\n}\r\n\r\nmat-card {\r\n    margin: auto;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-image: url('/assets/images/404.png');\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    background-repeat: no-repeat;\r\n    color: white;\r\n}\r\n\r\nbutton {\r\n    width: 30%;\r\n    position: absolute;\r\n    top: 62%;\r\n    right: 34%;\r\n    background-color: #0575E6;\r\n    color: white;\r\n}\r\n\r\n/* .error-div {\r\n    background-color: rgba(5, 118, 230, 0.815);\r\n    width: 30%;\r\n    height: 30%;\r\n    padding: 20px;\r\n    margin: auto;\r\n    border-radius: 8px;\r\n} */\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wYWdlLW5vdC1mb3VuZC9wYWdlLW5vdC1mb3VuZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7SUFDWixhQUFhO0lBQ2IsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixvQ0FBb0M7O0FBRXhDOztBQUVBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWixXQUFXO0lBQ1gsK0NBQStDO0lBQy9DLG9CQUFpQjtPQUFqQixpQkFBaUI7SUFDakIsNEJBQTRCO0lBQzVCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLFFBQVE7SUFDUixVQUFVO0lBQ1YseUJBQXlCO0lBQ3pCLFlBQVk7QUFDaEI7O0FBRUE7Ozs7Ozs7R0FPRyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGFnZS1ub3QtZm91bmQvcGFnZS1ub3QtZm91bmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5lcnJvci1jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDQwJTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIGhlaWdodDogNDIwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC1mYW1pbHk6ICdXb3JrIFNhbnMnLCBzYW5zLXNlcmlmO1xyXG5cclxufVxyXG5cclxubWF0LWNhcmQge1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy9hc3NldHMvaW1hZ2VzLzQwNC5wbmcnKTtcclxuICAgIG9iamVjdC1maXQ6IGNvdmVyO1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIHdpZHRoOiAzMCU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDYyJTtcclxuICAgIHJpZ2h0OiAzNCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDU3NUU2O1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4vKiAuZXJyb3ItZGl2IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoNSwgMTE4LCAyMzAsIDAuODE1KTtcclxuICAgIHdpZHRoOiAzMCU7XHJcbiAgICBoZWlnaHQ6IDMwJTtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbiAgICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbn0gKi8iXX0= */");
 
 /***/ }),
 
@@ -1710,6 +1739,42 @@ RoleGuardService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: "root"
     })
 ], RoleGuardService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/update-nav.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/services/update-nav.service.ts ***!
+  \************************************************/
+/*! exports provided: UpdateNavService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateNavService", function() { return UpdateNavService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let UpdateNavService = class UpdateNavService {
+    constructor() {
+        this.updateNavBarSource = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.updateNavBar$ = this.updateNavBarSource.asObservable();
+    }
+    updateNav(method) {
+        console.log(method + 'from service');
+        this.updateNavBarSource.next(method);
+    }
+};
+UpdateNavService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], UpdateNavService);
 
 
 
