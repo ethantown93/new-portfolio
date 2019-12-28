@@ -13,7 +13,6 @@ export class UpdateNavService {
   constructor() { }
 
   updateNav(method){
-    console.log(method + 'from service');
     this.updateNavBarSource.next(method);
   }
 }
