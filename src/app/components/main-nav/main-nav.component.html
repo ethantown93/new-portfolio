@@ -16,6 +16,13 @@
         <li>
           <a routerLink='/resume'><button mat-button>My Resume</button></a>
         </li>
+        </li>
+        <li *ngIf='isAdmin'>
+          <a routerLink='/messages'>My Messages</a>
+        </li>
+        <li *ngIf='isAdmin'>
+          <a (click)='onLogout()'>Logout</a>
+        </li>
       </ul>
     </mat-nav-list>
   </mat-sidenav>
