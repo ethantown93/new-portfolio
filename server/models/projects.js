@@ -6,7 +6,10 @@ let ProjectsSchema = mongoose.Schema({
     src: { type: String },
     alt: { type: String },
     gitHub: { type: String },
-    descripton: { type: String }
+    descripton: { type: String },
+    title: { type: String },
+    technologiesUsed: { type: String },
+    myRole: { type: String }
 
 });
 

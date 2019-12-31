@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 
 let codingLanguages = mongoose.Schema({
     language: { type: String },
-    proficiency: { type: Number }
+    proficiency: { type: Number },
+    src: { type: String },
+    alt: { type: String }
 })
 
 let languagesSchema = mongoose.Schema({

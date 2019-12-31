@@ -52,9 +52,9 @@ p {
 .skillsets-card {
     background-color: white;
     margin: auto;
-    max-height: 600px;
+    max-height: 630px;
     max-width: 60%;
-    margin-top: 290px;
+    margin-top: 100px;
     z-index: 1;
     box-shadow: 1px 1px 1px 1px rgba(158, 158, 158, 0.507);
 }
@@ -68,8 +68,8 @@ h3 {
 .main {
     text-align: center;
     margin: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 290px;
+    margin-bottom: 40px;
     font-family: 'Work Sans', sans-serif;
 }
 
@@ -86,12 +86,11 @@ mat-card {
 
 .main-1 li {
     display: inline-block;
-    margin: auto
 }
 
 .home-container {
     position: relative;
-    height: 171px;
+    height: 189px;
     width: 350px;
     margin: 15px !important;
     background: #00F260; 
@@ -99,7 +98,14 @@ mat-card {
     background: linear-gradient(to bottom, #0575E6, #00F260);
     border-radius: 8px;
     box-shadow: 2px 2px 6px 6px rgba(158, 158, 158, 0.507);
+}
 
+.project-title {
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .home-container-card {
@@ -119,11 +125,13 @@ mat-card {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .card-front > img {
-    border-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .card-back {
@@ -132,17 +140,37 @@ mat-card {
     height: 100%;
     backface-visibility: hidden;
     transform: rotateY(180deg);
-    border-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     color: white;
 }
 
-.card-back > p {
-    margin: 9px;
+.card-back-li {
+    margin-top: 8px;
+    margin-bottom: 8px;
     font-size: 16px
 }
 
 .card-back > a {
     margin: 2px;
+}
+
+.skillsets-card li {
+    display: inline-block;
+    margin: 25px;
+}
+
+.skillsets-card h2 {
+    text-align: center;
+}
+
+.skillsets-ul {
+    margin: auto;
+    text-align: center;
+}
+
+.skillsets-li > img {
+    max-height: 250px;
 }
 
 .social-icons {
@@ -208,26 +236,28 @@ mat-card {
 
     .home-container {
         width: 200px;
-        height: 98px;
+        height: 112px;
     }
 
     .home-contaienr li {
         width: 200px;
-        height: 98px;
+        height: 112px;
     }
 
     .home-container-card {
         max-width: 200px;
-        max-height: 98px;
+        max-height: 112px;
     }
 
     .card-back {
         max-width: 200px;
-        max-height: 98px;
+        max-height: 112px;
     }
 
-    .card-back > p {
+    .card-back-li {
         font-size: 10px;
+        margin-top: 3px;
+        margin-bottom: 2px;
     }
 
     .card-back button {
@@ -272,7 +302,7 @@ mat-card {
         color: white;
         text-align: center;
         margin: auto;
-        width: 80%;
+        width: 90%;
         line-height: 30px;
     }
 
@@ -284,7 +314,17 @@ mat-card {
       }
 
       .skillsets-card {
-          max-width: 100%;
+          max-height: 100%;
+          width: 90%;
       }
+
+      .project-title {
+          font-size: 12px;
+      }
+
+      .skillsets-li > img {
+        max-height: 150px;
+    }
+    
 
   }

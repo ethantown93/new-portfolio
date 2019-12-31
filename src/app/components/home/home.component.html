@@ -32,35 +32,44 @@
         </div>
 
     </div>
+
+    <div class='main' >
+        <mat-card class='main-card' *ngIf='error === false'>
+            <h2>My Recent Projects</h2>
+            <ul class='main-1'>
+                <li class='home-container' *ngFor='let project of projects' data-aos='fade-up'>
+                    <div class='project-title'><strong>{{ project.title }}</strong></div>
+                    <div class='home-container-card'>
+                        <div class='card-back'>
+                            <ul>
+                                <li class='card-back-li'>Description: {{ project.description }}</li>
+                                <li class='card-back-li'>Technologies Used: {{ project.technologiesUsed }}</li>
+                                <li class='card-back-li'>My Role: {{ project.myRole }}</li>
+                            </ul>
+                            <a href={{project.gitHub}} target='blank'><button mat-raised-button > Go to
+                                    GitHub</button></a>
+                            <a href={{project.link}} target='blank'><button mat-raised-button
+                                    *ngIf='project.link !== project.gitHub'>Go to Website</button></a>
+                        </div>
+                        <div class='card-front'>
+                            <img src='{{project.src}}' alt='{{project.alt}}'>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </mat-card>
+        <mat-card *ngIf='error === true'>
+            <h2>{{ errorMessage }}</h2>
+        </mat-card>
+    </div>
         <mat-card class='skillsets-card'>
-            <h3>My Skillsets</h3>
-            <canvas id='barChart' data-aos='fade-up'></canvas>
+            <h2>Technologies I Use</h2>
+            <hr>
+            <ul class='skillsets-ul' *ngFor='let langauge of languagesData'>
+                <li data-aos='fade-right' class='skillsets-li' *ngFor=' let data of langauge.languages'><img src='{{ data.src }}' alt='{{data.alt}}'></li>
+            </ul>
         </mat-card>
 
 </div>
 
 <hr>
-<div class='main' >
-    <mat-card class='main-card' *ngIf='error === false'>
-        <h2>My Recent Projects</h2>
-        <ul class='main-1'>
-            <li class='home-container' *ngFor='let project of projects' data-aos='fade-up'>
-                <div class='home-container-card'>
-                    <div class='card-back'>
-                        <p>{{ project.description }}</p>
-                        <a href={{project.gitHub}} target='blank'><button mat-raised-button > Go to
-                                GitHub</button></a>
-                        <a href={{project.link}} target='blank'><button mat-raised-button
-                                *ngIf='project.link !== project.gitHub'>Go to Website</button></a>
-                    </div>
-                    <div class='card-front'>
-                        <img src='{{project.src}}' alt='{{project.alt}}'>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </mat-card>
-    <mat-card *ngIf='error === true'>
-        <h2>{{ errorMessage }}</h2>
-    </mat-card>
-</div>
