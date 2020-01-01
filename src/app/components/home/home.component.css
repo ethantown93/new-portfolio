@@ -229,6 +229,16 @@ h2 {
 
   @media (max-width: 768px) {
 
+    .mugshot {
+        height: 150px;
+        width: 150px;
+    }
+
+    .personal h1{
+        font-size: 23px;
+        padding: 10px;
+    }
+
     button {
         line-height: 0px ;
         padding: 0px ;
@@ -307,7 +317,7 @@ h2 {
     }
 
       .first-div-content > p {
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1;
         width: 100%;
         margin-bottom: 50px;
