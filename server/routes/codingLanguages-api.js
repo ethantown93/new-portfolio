@@ -6,7 +6,9 @@ const languagesSchema = require('../models/languages');
 router.post('/languages', (req, res, next) => {
     const language = new languagesSchema({
         languages: req.body.languages,
-        proficiency: req.body.proficiency
+        proficiency: req.body.proficiency,
+        src: req.body.src,
+        alt: req.body.alt
     });
     language.save()
     res.status(201).json({

@@ -35,7 +35,8 @@
 
     <div class='main' >
         <mat-card class='main-card' *ngIf='error === false'>
-            <h2>My Recent Projects</h2>
+            <h1>My Recent Projects</h1>
+            <hr>
             <ul class='main-1'>
                 <li class='home-container' *ngFor='let project of projects' data-aos='fade-up'>
                     <div class='project-title'><strong>{{ project.title }}</strong></div>
@@ -63,7 +64,7 @@
         </mat-card>
     </div>
         <mat-card class='skillsets-card'>
-            <h2>Technologies I Use</h2>
+            <h1>Technologies I Use</h1>
             <hr>
             <ul class='skillsets-ul' *ngFor='let langauge of languagesData'>
                 <li data-aos='fade-right' class='skillsets-li' *ngFor=' let data of langauge.languages'><img src='{{ data.src }}' alt='{{data.alt}}'></li>

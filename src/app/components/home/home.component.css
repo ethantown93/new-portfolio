@@ -52,7 +52,7 @@ p {
 .skillsets-card {
     background-color: white;
     margin: auto;
-    max-height: 630px;
+    max-height: 100%;
     max-width: 60%;
     margin-top: 100px;
     z-index: 1;
@@ -160,7 +160,7 @@ h2 {
     margin: 25px;
 }
 
-.skillsets-card h2 {
+.skillsets-card h1 {
     text-align: center;
 }
 
