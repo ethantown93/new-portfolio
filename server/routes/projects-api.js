@@ -9,7 +9,13 @@ router.post('/projects', (req, res, next) => {
     const project = new ProjectsSchema({
         link: req.body.link,
         src: req.body.src,
-        alt: req.body.alt
+        alt: req.body.alt,
+        gitHub: req.body.gitHub,
+        description: req.body.description,
+        title: req.body.title,
+        technologiesUsed: req.body.technologiesUsed,
+        myRole: req.body.role
+        
     });
     project.save()
     res.status(201).json({
