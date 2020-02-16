@@ -5,6 +5,7 @@ import { MatDialog, MatDialogConfig} from '@angular/material';
 import { Router } from '@angular/router';
 import { UpdateNavService } from '../../services/update-nav.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
     private dialog: MatDialog, 
     private http: HttpClient, 
     private fb: FormBuilder,
-    private updateNav: UpdateNavService
+    private nav: UpdateNavService
     ) { }
 
   ngOnInit() {
@@ -31,21 +32,39 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(value){
-    this.http.post('/api/login/login', value).subscribe( res => {
+    this.nav.login(value)
+    .then( res => {
       this.loginData = res;
-      if(res){
-        localStorage.setItem('token', this.loginData.token);
-        localStorage.setItem('userId', this.loginData.userId);
-        localStorage.setItem('role', this.loginData.role)
+        if(res){
+        localStorage.setItem('token', this.loginData.user.uid);
+        localStorage.setItem('userId', this.loginData.user.uid);
+        localStorage.setItem('role', 'admin')
         this.dialog.closeAll()
-        this.updateNav.updateNav(this.checkAdmin);
+        this.nav.updateNav(this.checkAdmin);
         alert('Successfully logged in.')
+        }
 
-      } else {
-        alert("login unsuccessful.")
-      }
+    }).catch( err => {
+      console.log(err)
     })
   }
+
+  // onLogin(value){
+  //   this.http.post('https://portfolionodejs-env.mx7xwvawx9.us-east-2.elasticbeanstalk.com/api/login/login', value).subscribe( res => {
+  //     this.loginData = res;
+  //     if(res){
+  //       localStorage.setItem('token', this.loginData.token);
+  //       localStorage.setItem('userId', this.loginData.userId);
+  //       localStorage.setItem('role', this.loginData.role)
+  //       this.dialog.closeAll()
+  //       this.updateNav.updateNav(this.checkAdmin);
+  //       alert('Successfully logged in.')
+
+  //     } else {
+  //       alert("login unsuccessful.")
+  //     }
+  //   })
+  // }
 
   checkAdmin(){
     let adminCheck = localStorage.getItem('role');

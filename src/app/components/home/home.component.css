@@ -1,13 +1,67 @@
 .container {
     font-family: 'Work Sans', sans-serif;
-    margin-bottom: 100px;
-    margin-top: 50px;
+
+    position: relative;
+
 }
 
 .personal {
+    position: relative;
+    top: 0;
+    height: 100vh;
     text-align: center;
-    -webkit-animation: slideRight .75s forwards;
+    -webkit-animation: slideRight .01s forwards;
+}
 
+.personal-info {
+    width: 40%;
+    height: 22%;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    font-family: 'Work Sans', sans-serif;
+    left: 50%;
+    top: 50%;
+    margin-left: -20%;
+    margin-top: -12%;
+    text-align: center;
+}
+
+.personal-info:after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(76, 68, 68, 0.65) 90%);
+    width: 100%;
+    height: 16em;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-height: 100%;
+    max-width: 100%;
+    background-size: auto ;
+    z-index: -2;
+}
+
+.video-cover {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: -1
+}
+
+.video-mobile {
+    height: 100vh;
+    display: none;
 }
 
 h1 {
@@ -19,18 +73,11 @@ p {
     font-size: 18px;
 }
 
-.mugshot {
-    border-radius: 180%;
-    height: 250px;
-    width: 250px;
-    display: inline-block;
-    margin-bottom: 50px;
-}
 
 #first-div{
-    background: #00F260; 
-    background: -webkit-linear-gradient(to right, #0575E6, #00F260);
-    background: linear-gradient(to right, #0575E6, #00F260);
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 100%;
     height: 350px;
     position: absolute;
@@ -49,6 +96,14 @@ p {
     margin-bottom: 15px;
 }
 
+.skillsets-container {
+    background-attachment: fixed;
+    padding-top: 10px;
+    padding-bottom: 60px;
+    background-image: url('/assets/images/coding.jpeg');
+
+}
+
 .skillsets-card {
     background-color: white;
     margin: auto;
@@ -56,7 +111,7 @@ p {
     max-width: 60%;
     margin-top: 100px;
     z-index: 1;
-    box-shadow: 1px 1px 1px 1px rgba(158, 158, 158, 0.507);
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.507);
 }
 
 h3 {
@@ -69,7 +124,7 @@ h3 {
     text-align: center;
     margin: auto;
     margin-top: 290px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
     font-family: 'Work Sans', sans-serif;
 }
 
@@ -80,7 +135,7 @@ h2 {
 .main-card {
     margin: auto;
     background-color: white;
-    box-shadow: 1px 1px 3px 3px rgba(158, 158, 158, 0.507);
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.507);
     max-width: 60%;
 }
 
@@ -93,11 +148,9 @@ h2 {
     height: 189px;
     width: 350px;
     margin: 15px !important;
-    background: #00F260; 
-    background: -webkit-linear-gradient(to bottom, #0575E6, #00F260);
-    background: linear-gradient(to bottom, #0575E6, #00F260);
+    background: #434343; 
     border-radius: 8px;
-    box-shadow: 2px 2px 6px 6px rgba(158, 158, 158, 0.507);
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.507);
 }
 
 .project-title {
@@ -185,10 +238,10 @@ h2 {
   .social-icons a {
     display: block;
     text-align: center;
-    padding: 16px;
+    padding: 10px;
     transition: all 0.5s ease;
     color: white;
-    font-size: 25px;
+    font-size: 15px;
     margin: 2px;
     border-radius: 6px;
 
@@ -229,19 +282,38 @@ h2 {
 
   @media (max-width: 768px) {
 
-    .mugshot {
-        height: 150px;
-        width: 150px;
-    }
 
     .personal h1{
         font-size: 23px;
         padding: 10px;
     }
 
+    
+    .personal-info {
+        width: 90%;
+        left: 5%;
+        top: 30%;
+        margin: auto;
+    }
+
+    .personal-info:after {
+        pointer-events: none;
+        background-image: none;
+    }
+
+    #myVideo {
+        height: 100vh;
+        max-width: 100%;
+        object-fit: cover !important;
+    }
+
+    .video-cover {
+        background-color: rgba(0, 0, 0, 0.89);
+    }
+
     button {
         line-height: 0px ;
-        padding: 0px ;
+        padding-left: 0px ;
     }
 
     .home-container {
@@ -288,25 +360,8 @@ h2 {
 
 
     .social-icons {
-        position: fixed;
-        top: 65%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        z-index: 2;
+        display: none;
     }
-
-    .social-icons a {
-        display: block;
-        text-align: center;
-        padding: 8px;
-        transition: all 0.5s ease;
-        color: white;
-        font-size: 15px;
-        margin: 2px;
-        border-radius: 6px;
-    
-      }
 
     .first-div-content {
         color: white;
@@ -345,6 +400,18 @@ h2 {
   @media only screen 
     and (min-device-width : 768px) 
     and (max-device-width : 1024px) {
+
+
+    #myVideo {
+        height: 100vh;
+        max-width: 100%;
+        object-fit: cover !important;
+    }
+
+    .personal-info:after {
+        pointer-events: none;
+        background-image: none;
+    }
 
     button {
         line-height: 0px ;

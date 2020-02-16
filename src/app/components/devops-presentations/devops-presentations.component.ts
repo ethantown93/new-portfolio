@@ -15,16 +15,16 @@ export class DevopsPresentationsComponent implements OnInit {
   noData: boolean = false;
 
   ngOnInit() {
-    this.http.get('/api/p/video-presentations').subscribe( res => {
-      if(!res){
-        console.log('no data');
-      } else if (res) {
-        this.presentations = res;
-      } else {
-        console.log('error');
-        this.noData = true;
-      }
-    })
+    // this.http.get('https://portfolionodejs-env.mx7xwvawx9.us-east-2.elasticbeanstalk.com/api/p/video-presentations').subscribe( res => {
+    //   if(!res){
+    //     console.log('no data');
+    //   } else if (res) {
+    //     this.presentations = res;
+    //   } else {
+    //     console.log('error');
+    //     this.noData = true;
+    //   }
+    // })
   }
 
 }

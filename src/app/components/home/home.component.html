@@ -1,33 +1,49 @@
 <div class="social-icons">
-        <a href="https://www.facebook.com/ethan.townsend.5" target='blank' class="facebook"><i class="fa fa-facebook"></i></a>
-        <a href=" https://github.com/ethantown93" target='blank' class="github"><i class="fa fa-github"></i></a>
-        <a href=" https://www.instagram.com/ethantownsend93/" target='blank' class="instagram"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/ethan-townsend-15320a10b/" target='blank' class="linkedin"><i class="fa fa-linkedin"></i></a>
-      </div>
+    <a href="https://www.facebook.com/ethan.townsend.5" target='blank' class="facebook"><i
+            class="fa fa-facebook"></i></a>
+    <a href=" https://github.com/ethantown93" target='blank' class="github"><i class="fa fa-github"></i></a>
+    <a href=" https://www.instagram.com/ethantownsend93/" target='blank' class="instagram"><i
+            class="fa fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/ethan-townsend-15320a10b/" target='blank' class="linkedin"><i
+            class="fa fa-linkedin"></i></a>
+</div>
+
+<div class="video-cover"></div>
+
+<div class="video-mobile">
+    <img src="./assets/images/mobile-video.PNG" alt="mobile background">
+</div>
+
+<div class="personal-info">
+    <h1>
+        Husband, Full-Stack Developer with a preference for Front-End Development.
+    </h1>
+    <p>I'm someone who's passionate about web technologies, <br />
+        writing the best code that I can, <br /> and creating dynamic
+        and responsive web applications.</p>
+</div>
 
 <div class='container' data-aos='fade-up'>
     <div class='personal'>
-        <h1>
-            Husband, Full-Stack Developer with a preference for Front-End Development.
-        </h1>
-        <p>I'm someone who's passionate about web technologies, <br />
-            writing the best code that I can, <br /> and creating dynamic
-            and responsive web applications.</p>
-        <img class='mugshot' src='/assets/images/ethan.png' alt='ethans mugshot'>
+        <app-main-nav></app-main-nav>
+        <video autoplay [muted]="true" loop id="myVideo">
+            <source src="./assets/videos/video.mp4" type="video/mp4">
+        </video>
     </div>
-
+    
     <div id='first-div'>
         <div class='first-div-content' data-aos='fade-up'>
             <h2>
                 Hi, I'm Ethan. It's a Pleasure to meet you.
             </h2>
-            <p>I'm a full stack developer. My favorite tech stack is the MEAN stack. If you're interested in working with me, let's get in touch and get to work. 
+            <p>I'm a full stack developer. My favorite tech stack is the MEAN stack. If you're interested in working
+                with me, let's get in touch and get to work.
             </p>
         </div>
 
     </div>
 
-    <div class='main' >
+    <div class='main'>
         <mat-card class='main-card' *ngIf='error === false'>
             <h1>My Recent Projects</h1>
             <hr>
@@ -41,7 +57,7 @@
                                 <li class='card-back-li'>Technologies Used: {{ project.technologiesUsed }}</li>
                                 <li class='card-back-li'>My Role: {{ project.myRole }}</li>
                             </ul>
-                            <a href={{project.gitHub}} target='blank'><button mat-raised-button > Go to
+                            <a href={{project.gitHub}} target='blank'><button mat-raised-button> Go to
                                     GitHub</button></a>
                             <a href={{project.link}} target='blank'><button mat-raised-button
                                     *ngIf='project.link !== project.gitHub'>Go to Website</button></a>
@@ -57,14 +73,14 @@
             <h2>{{ errorMessage }}</h2>
         </mat-card>
     </div>
+    <div class="skillsets-container">
         <mat-card class='skillsets-card'>
             <h1>Technologies I Use</h1>
             <hr>
-            <ul class='skillsets-ul' *ngFor='let langauge of languagesData'>
-                <li data-aos='fade-right' class='skillsets-li' *ngFor=' let data of langauge.languages'><img src='{{ data.src }}' alt='{{data.alt}}'></li>
+            <ul class='skillsets-ul' >
+                <li data-aos='fade-right' class='skillsets-li' *ngFor='let langauge of languagesData'><img
+                        src='{{ langauge.src }}' alt='{{langauge.alt}}'></li>
             </ul>
         </mat-card>
-
+    </div>
 </div>
-
-<hr>

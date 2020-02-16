@@ -22,17 +22,17 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(value){
-    this.http.post('/api/m/messages', value).subscribe( res =>{
-      if(!res){
-        console.log('no response from db')
-      } else if(res){
-        console.log("message saved to database");
-        this.messageSaved = true;
-      } else {
-        console.log('an unknown error has occured.')
-      }
-    });
-  };
+  // onSubmit(value){
+  //   this.http.post('https://portfolionodejs-env.mx7xwvawx9.us-east-2.elasticbeanstalk.com/api/m/messages', value).subscribe( res =>{
+  //     if(!res){
+  //       console.log('no response from db')
+  //     } else if(res){
+  //       console.log("message saved to database");
+  //       this.messageSaved = true;
+  //     } else {
+  //       console.log('an unknown error has occured.')
+  //     }
+  //   });
+  // };
 
 }

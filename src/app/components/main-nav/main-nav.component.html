@@ -5,15 +5,6 @@
     <mat-nav-list>
       <ul>
         <li>
-          <a routerLink='/'><button mat-button>Home</button></a>
-        </li>
-        <li>
-          <a routerLink='/about'><button mat-button>About Me</button></a>
-        </li>
-        <li>
-          <a routerLink='/devops-presentations'><button mat-button>DevOps Presentations</button></a>
-        </li>
-        <li>
           <a routerLink='/resume'><button mat-button>My Resume</button></a>
         </li>
         <li *ngIf='isAdmin'>
@@ -31,20 +22,11 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class='name'>Ethan's Portfolio</span>
+      <span class='name' routerLink='/'>Ethan E. Townsend</span>
       <span class='nav-link'></span>
       <ul>
         <li>
           <button (click)='openDialog()' mat-raised-button>Contact</button>
-        </li>
-        <li>
-          <a routerLink='/'>Home</a>
-        </li>
-        <li>
-          <a routerLink='/about'>About Me</a>
-        </li>
-        <li>
-          <a routerLink='/devops-presentations'>DevOps Presentations</a>
         </li>
         <li>
           <a routerLink='/resume'>My Resume</a>

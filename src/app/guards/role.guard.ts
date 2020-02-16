@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import {
   CanActivate,
-  Router,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  Router
 } from "@angular/router";
+import { AngularFireAuth } from 'angularfire2/auth';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
 
 @Injectable({
@@ -14,29 +14,19 @@ import { map } from "rxjs/operators";
 export class RoleGuardService implements CanActivate {
   constructor(
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private afAuth: AngularFireAuth,
   ) {}
 
   userId: string;
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-   
-    return this.findUserRole().pipe(map(res => {
-      let role = res;
-
-      if (role === "admin") {
-        return true;
-      } else {
-        alert("You're not authorized to access that page.")
-        this.router.navigate(["/"]);
-        return false;
-      }
-    }))
+  canActivate(): Observable<boolean> {
+    return this.afAuth.authState.pipe(map(auth => {
+        if(!auth) {
+            return false;
+        } else {
+            return true;
+        }
+    }));
 }
-
-  findUserRole() {
-    this.userId = localStorage.getItem('userId');
-
-    return this.http.get('/api/login/user' + this.userId);
-  }
 }

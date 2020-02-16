@@ -3,21 +3,34 @@ mat-sidenav-container {
 }
 
 .sidenav-container {
-  height: 100%;
+  height: 70px;
+  width: 100%;
+  position: absolute;
+  top:0;
+  padding-bottom: -50px;
 }
 
 .sidenav {
   width: 200px;
+  margin: auto
+}
+
+.mat-drawer-container {
+  background-color: rgba(0, 0, 0, 0) !important;
+  margin: auto;
 }
 
 .primary-toolbar {
-  background: #0575E6
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.primary-toolbar ul {
+  margin-right: 15%;
 }
 
 .primary-toolbar li {
   display: inline-block;
-  font-size: 16px;
-}
+  font-size: 16px;}
 
 .primary-toolbar li a:hover, .primary-toolbar li a:active {
   border-bottom: 2px solid white;
@@ -25,10 +38,11 @@ mat-sidenav-container {
 
 .primary-toolbar button {
   margin-right: 5px;
+
 }
 
 .sidenav .mat-toolbar {
-  background: #0575E6;
+  background: rgba(0, 0, 0, 0.787);
 }
 
 .mat-toolbar.mat-primary {
@@ -79,9 +93,17 @@ mat-nav-list li {
     display: none;
   }
 
+  .primary-toolbar {
+    padding: 0;
+  }
+
   .name {
     margin-left: 5px;
     font-size: 18px;
+  }
+
+  mat-icon {
+    color: white;
   }
 }
 

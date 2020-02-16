@@ -15,16 +15,16 @@ export class MessagesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.http.get('/api/m/read-messages').subscribe( res => {
-      if(res){
-        console.log(res);
-        this.messages = res;
-      } else if(!res){
-        alert('No messages were found at this time');
-      } else {
-        alert('Server error');
-      }
-    })
+    // this.http.get('https://portfolionodejs-env.mx7xwvawx9.us-east-2.elasticbeanstalk.com/api/m/read-messages').subscribe( res => {
+    //   if(res){
+    //     console.log(res);
+    //     this.messages = res;
+    //   } else if(!res){
+    //     alert('No messages were found at this time');
+    //   } else {
+    //     alert('Server error');
+    //   }
+    // })
   }
 
 }
