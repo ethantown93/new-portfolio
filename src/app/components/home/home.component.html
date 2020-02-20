@@ -1,4 +1,88 @@
-<div class="social-icons">
+
+  <div class="container">
+
+    <!-- Showcase -->
+    <header class="showcase">
+      <div class="showcase-div dark">
+        <h2>Hi, I'm Ethan. It's a Pleasure to meet you.</h2>
+        <p>
+          I'm a full stack developer. My favorite tech stack is the MEAN stack. If you're interested in working with me, let's get in touch and get to work.      </p>
+        <a href="https://github.com/ethantown93" target="blank" class="btn">
+          Check out my GitHub <i class="fa fa-chevron-right"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Home cards 1 -->
+    <section class="home-cards" data-aos='fade-up'>
+
+      <div class="home-cards-div" *ngFor='let project of projects'>
+        <img src='{{project.src}}' alt='{{project.alt}}'>
+        <h3>{{ project.title }}</h3>
+        <ul>
+            <li>
+                Description: {{ project.description }}
+            </li>
+            <li>
+                Technologies Used: {{ project.technologiesUsed }}
+            </li>
+            <li>
+                My Role: {{ project.myRole }}            
+            </li>
+        </ul>
+        <div class="link-container ">
+            <a class="github" target="blank" href="{{ project.gitHub }}">GitHub <i class="fa fa-chevron-right"></i></a> 
+            <a class="website" target="blank" href="{{ project.link }}">Website <i class="fa fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section class="resume dark">
+      <div class="content">
+        <h2>Want to know more about me?</h2>
+        <p>Click the button below to schedule a time for us to talk! I can't wait to hear from you.</p>
+          <a href="https://calendly.com/eetfitness/interview" target='blank' class="btn">
+            Let's talk! <i class="fa fa-chevron-right"></i>
+          </a>
+      </div>
+    </section>
+
+    <!-- Home cards 2 -->
+    <h1>Technologies I Use</h1>
+            <section class="home-cards">
+                <div *ngFor="let langauge of languagesData">
+                    <img class="home-cards-img" src='{{ langauge.src }}' alt='{{langauge.alt}}' />
+                    <h1>{{ langauge.languages }}</h1>
+
+                </div>
+      </section>
+      
+      <!-- portolio -->
+      <section class="portfolio dark">
+        <div class="content">
+          <h2>Interested in how I made this website?</h2>
+          <p>Check out my GitHub repo for this portfolio by clicking on the link blow.</p>
+            <a href="https://github.com/ethantown93/new-portfolio" target="blank" class="btn">
+              Go to GitHub <i class="fa fa-chevron-right"></i>
+            </a>
+        </div>
+      </section>
+
+      <!-- Follow -->
+      <section class="follow">
+        <p>Connect with me on social:</p>
+        <a href="https://github.com/ethantown93" target='blank'>
+          <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ethan-townsend-15320a10b/" target='blank'>
+          <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+        </a>
+
+      </section>
+    </div>
+
+<!-- <div class="social-icons">
     <a href="https://www.facebook.com/ethan.townsend.5" target='blank' class="facebook"><i
             class="fa fa-facebook"></i></a>
     <a href=" https://github.com/ethantown93" target='blank' class="github"><i class="fa fa-github"></i></a>
@@ -83,4 +167,4 @@
             </ul>
         </mat-card>
     </div>
-</div>
+</div> -->

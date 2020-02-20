@@ -35,6 +35,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ScheduleAppointmentComponent } from './components/schedule-appointment/schedule-appointment.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ResumeComponent,
     MessagesComponent,
     PageNotFoundComponent,
+    ScheduleAppointmentComponent,
   ],
   entryComponents: [ContactComponent],
   imports: [
