@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as AOS from 'aos';
 import { UpdateNavService } from '../../services/update-nav.service';
-import { Languages } from '../../../../server/models/languages'
+import { MatDialog } from '@angular/material/dialog';
+
+import AOS from 'aos';
+
+import { ProjectDetailsComponent } from '../project-details/project-details.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
 
   projects: any = [];
   errorMessage = 'There was an error loading this data.';
   error: boolean = false;
+  projectsLoaded: boolean = false;
 
   languagesData: any = [];
   isLoading = false;
 
-  constructor(private http: HttpClient, private nav: UpdateNavService) { }
+  constructor(private http: HttpClient, private nav: UpdateNavService, public dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -27,8 +31,9 @@ export class HomeComponent implements OnInit {
     this.nav.getProj().subscribe( res => {
       if(res) {
         console.log(res)
-
         this.projects = res;
+        this.projectsLoaded = true;
+        console.log(this.projectsLoaded)
       }
     })
 
@@ -39,26 +44,15 @@ export class HomeComponent implements OnInit {
       }
     })
 
-    // this.http.get('https://portfolionodejs-env.mx7xwvawx9.us-east-2.elasticbeanstalk.com/api/languages').subscribe( res => {
-    //   if(res){
-    //     this.languagesData = res;
-    //     console.log(this.languagesData)
-    //   } else {
-    //     console.log('no entries found');
-    //   }
+  }
 
-    // })
+  openDialog(project) {
+    const dialogRef = this.dialog.open(ProjectDetailsComponent, { data: project });
 
-    // this.http.get('https://portfolionodejs-env.mx7xwvawx9.us-east-2.elasticbeanstalk.com/api/p/projects').subscribe( res => {
-    //   if(res){
-    //     this.projects = res;
-    //     console.log(this.projects)
-    //   }else if(!res){
-    //     this.error = true;
-    //   } else {
-    //     console.log('an unknown error has occured')
-    //   }
-    // })
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+
+    });
   }
 }
 

@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
   firebase: {
     apiKey: "AIzaSyA31KELnDZudnZsTFjl5dicyTg7KNg5Kis",
     authDomain: "portfolio-24b28.firebaseapp.com",
@@ -9,4 +9,5 @@ export const environment = {
     messagingSenderId: "247650449906",
     appId: "1:247650449906:web:11b65ef750625944d1936b",
     measurementId: "G-TLLHZJ7ETK"
-  }};
+  }
+};

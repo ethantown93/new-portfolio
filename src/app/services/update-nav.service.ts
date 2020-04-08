@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators'
 import { MethodCall } from '@angular/compiler';
 

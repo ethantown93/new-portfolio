@@ -1,65 +1,146 @@
+<div class="container">
 
-  <div class="container">
+  <!-- Showcase -->
+  <header class="showcase">
+    <div class="showcase-side-1">
 
-    <!-- Showcase -->
-    <header class="showcase">
-      <div class="showcase-div dark">
-        <h2>Hi, I'm Ethan. It's a Pleasure to meet you.</h2>
-        <p>
-          I'm a full stack developer. My favorite tech stack is the MEAN stack. If you're interested in working with me, let's get in touch and get to work.      </p>
-        <a href="https://github.com/ethantown93" target="blank" class="btn">
-          Check out my GitHub <i class="fa fa-chevron-right"></i>
-        </a>
-      </div>
-    </header>
+    </div>
+    <div class="showcase-side-2">
 
-    <!-- Home cards 1 -->
-    <section class="home-cards" data-aos='fade-up'>
+    </div>
 
-      <div class="home-cards-div" *ngFor='let project of projects'>
-        <img src='{{project.src}}' alt='{{project.alt}}'>
-        <h3>{{ project.title }}</h3>
-        <ul>
-            <li>
-                Description: {{ project.description }}
-            </li>
-            <li>
-                Technologies Used: {{ project.technologiesUsed }}
-            </li>
-            <li>
-                My Role: {{ project.myRole }}            
-            </li>
+    <div class="showcase-info">
+      <h1 class='showcase-info-heading'>
+        <span class='showcase-info-heading-text'>
+          <span class='showcase-info-heading-text-1'>E</span>
+          <span class='showcase-info-heading-text-2'>T</span>
+          <span class='showcase-info-heading-text-3'>H</span>
+          <span class='showcase-info-heading-text-4'>A</span>
+          <span class='showcase-info-heading-text-5'>N</span>
+          <span>&nbsp;</span>
+          <span class='showcase-info-heading-text-6'>T</span>
+          <span class='showcase-info-heading-text-7'>O</span>
+          <span class='showcase-info-heading-text-8'>W</span>
+          <span class='showcase-info-heading-text-9'>N</span>
+          <span class='showcase-info-heading-text-10'>S</span>
+          <span class='showcase-info-heading-text-11'>E</span>
+          <span class='showcase-info-heading-text-12'>N</span>
+          <span class='showcase-info-heading-text-13'>D</span>
+        </span>
+      </h1>
+      <p class='showcase-info-text'>
+        <span class="showcase-info-text-14">c</span>
+        <span class="showcase-info-text-15">r</span>
+        <span class="showcase-info-text-16">e</span>
+        <span class="showcase-info-text-17">a</span>
+        <span class="showcase-info-text-18">t</span>
+        <span class="showcase-info-text-19">i</span>
+        <span class="showcase-info-text-20">n</span>
+        <span class="showcase-info-text-21">g</span>
+        <span>&nbsp;</span>
+        <span class="showcase-info-text-22">y</span>
+        <span class="showcase-info-text-23">o</span>
+        <span class="showcase-info-text-24">u</span>
+        <span class="showcase-info-text-25">r</span>
+        <span>&nbsp;</span>
+        <span class="showcase-info-text-26">d</span>
+        <span class="showcase-info-text-27">i</span>
+        <span class="showcase-info-text-27">g</span>
+        <span class="showcase-info-text-29">i</span>
+        <span class="showcase-info-text-30">t</span>
+        <span class="showcase-info-text-31">a</span>
+        <span class="showcase-info-text-32">l</span>
+        <span>&nbsp;</span>
+        <span class="showcase-info-text-33">e</span>
+        <span class="showcase-info-text-34">x</span>
+        <span class="showcase-info-text-35">p</span>
+        <span class="showcase-info-text-36">e</span>
+        <span class="showcase-info-text-37">r</span>
+        <span class="showcase-info-text-38">i</span>
+        <span class="showcase-info-text-39">e</span>
+        <span class="showcase-info-text-40">n</span>
+        <span class="showcase-info-text-41">c</span>
+        <span class="showcase-info-text-42">e</span>
+      </p>
+      <a href="https://github.com/ethantown93" target="blank" class="btn showcase-info-button">
+        <i class="fa fa-github showcase-info-button-icon" aria-hidden="true"></i> Check out my GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- Home cards 1 -->
+
+  <section class='cards' *ngIf='!projectsLoaded'>
+    <div class="cards-gif"><img src="./assets/videos/loader.gif" alt=""></div>
+  </section>
+
+  <section class="cards-home" *ngIf='projectsLoaded'>
+    <h2 class="cards-home-h2">My Recent Work</h2>
+    <div class="cards-home-div-main">
+      <div class="cards-home-div" *ngFor='let project of projects' data-aos="fade-up" data-aos-duration="750">
+        <figure class="cards-home-div-figure">
+          <img class='cards-home-div-img' src='{{project.src}}' alt='{{project.alt}}'>
+          <figcaption class="cards-home-div-figure-caption">
+            <i class="fa fa-eye cards-home-div-figure-caption-icon" aria-hidden="true"></i>
+            <a (click)='openDialog(project)' class="cards-home-div-figure-caption-link">Learn
+              More<span>&#8594;</span></a>
+          </figcaption>
+        </figure>
+        <h3 class='cards-home-header'>{{ project.title }}</h3>
+        <ul class='cards-home-list'>
+          <li class='cards-home-list-item'>
+            <strong>Login Credentials:</strong>
+          </li>
+          <li class='cards-home-list-item'>
+            <strong>Login Username:</strong> {{ project.login_username }}
+          </li>
+          <li class='cards-home-list-item'>
+            <strong>Login Password:</strong> {{ project.login_password }}
+          </li>
         </ul>
-        <div class="link-container ">
-            <a class="github" target="blank" href="{{ project.gitHub }}">GitHub <i class="fa fa-chevron-right"></i></a> 
-            <a class="website" target="blank" href="{{ project.link }}">Website <i class="fa fa-chevron-right"></i></a>
+        <div class="cards-home-learn-more">
+          <a href="{{ project.gitHub }}" target="blank" class="cards-home-learn-more-links">
+            <i class="fa fa-github" aria-hidden="true"></i> GitHub
+          </a>
+          <a href="{{ project.link }}" target="blank" class="cards-home-learn-more-links">
+            <i class="fa fa-globe" aria-hidden="true"></i> Website
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Resume -->
-    <section class="resume dark">
-      <div class="content">
-        <h2>Want to know more about me?</h2>
-        <p>Click the button below to schedule a time for us to talk! I can't wait to hear from you.</p>
-          <a href="https://calendly.com/eetfitness/interview" target='blank' class="btn">
-            Let's talk! <i class="fa fa-chevron-right"></i>
-          </a>
+  <!-- Schedule interview -->
+  <section class="resume dark">
+    <div class="resume-bg-video">
+      <video src='./assets/videos/galaxy.mp4' class="resume-bg-video-content" autoplay muted loop>
+      </video>
+    </div>
+    <div class="resume-content">
+      <h2 class='resume-h2'>Want to know more about me?</h2>
+      <p class='resume-text'>Click the button below to schedule a time for us to talk! I can't wait to hear from you.
+      </p>
+      <a href="https://calendly.com/eetfitness/interview" target='blank' class="btn resume-button">
+        Let's talk! <i class="fa fa-chevron-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Home cards 2 -->
+
+  <section class="technologies">
+    <h2 class='technologies-h2'>Technologies I Use</h2>
+    <div class="technologies-container">
+      <div class='technologies-div' *ngFor="let langauge of languagesData" data-aos="fade-right" data-aos-duration="750">
+        <img class="technologies-img" src='{{ langauge.src }}' alt='{{langauge.alt}}' />
+        <h3 class='technologies-h3'>{{ langauge.languages }}</h3>
+  
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Home cards 2 -->
-    <h1>Technologies I Use</h1>
-            <section class="home-cards">
-                <div *ngFor="let langauge of languagesData">
-                    <img class="home-cards-img" src='{{ langauge.src }}' alt='{{langauge.alt}}' />
-                    <h1>{{ langauge.languages }}</h1>
-
-                </div>
-      </section>
-      
-      <!-- portolio -->
-      <section class="portfolio dark">
+  <!-- portolio -->
+  <!-- <section class="portfolio dark">
         <div class="content">
           <h2>Interested in how I made this website?</h2>
           <p>Check out my GitHub repo for this portfolio by clicking on the link blow.</p>
@@ -67,104 +148,6 @@
               Go to GitHub <i class="fa fa-chevron-right"></i>
             </a>
         </div>
-      </section>
+      </section> -->
 
-      <!-- Follow -->
-      <section class="follow">
-        <p>Connect with me on social:</p>
-        <a href="https://github.com/ethantown93" target='blank'>
-          <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/ethan-townsend-15320a10b/" target='blank'>
-          <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-        </a>
-
-      </section>
-    </div>
-
-<!-- <div class="social-icons">
-    <a href="https://www.facebook.com/ethan.townsend.5" target='blank' class="facebook"><i
-            class="fa fa-facebook"></i></a>
-    <a href=" https://github.com/ethantown93" target='blank' class="github"><i class="fa fa-github"></i></a>
-    <a href=" https://www.instagram.com/ethantownsend93/" target='blank' class="instagram"><i
-            class="fa fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/in/ethan-townsend-15320a10b/" target='blank' class="linkedin"><i
-            class="fa fa-linkedin"></i></a>
 </div>
-
-<div class="video-cover"></div>
-
-<div class="video-mobile">
-    <img src="./assets/images/mobile-video.PNG" alt="mobile background">
-</div>
-
-<div class="personal-info">
-    <h1>
-        Husband, Full-Stack Developer with a preference for Front-End Development.
-    </h1>
-    <p>I'm someone who's passionate about web technologies, <br />
-        writing the best code that I can, <br /> and creating dynamic
-        and responsive web applications.</p>
-</div>
-
-<div class='container' data-aos='fade-up'>
-    <div class='personal'>
-        <app-main-nav></app-main-nav>
-        <video autoplay [muted]="true" loop id="myVideo">
-            <source src="./assets/videos/video.mp4" type="video/mp4">
-        </video>
-    </div>
-    
-    <div id='first-div'>
-        <div class='first-div-content' data-aos='fade-up'>
-            <h2>
-                Hi, I'm Ethan. It's a Pleasure to meet you.
-            </h2>
-            <p>I'm a full stack developer. My favorite tech stack is the MEAN stack. If you're interested in working
-                with me, let's get in touch and get to work.
-            </p>
-        </div>
-
-    </div>
-
-    <div class='main'>
-        <mat-card class='main-card' *ngIf='error === false'>
-            <h1>My Recent Projects</h1>
-            <hr>
-            <ul class='main-1'>
-                <li class='home-container' *ngFor='let project of projects' data-aos='fade-up'>
-                    <div class='project-title'><strong>{{ project.title }}</strong></div>
-                    <div class='home-container-card'>
-                        <div class='card-back'>
-                            <ul>
-                                <li class='card-back-li'>Description: {{ project.description }}</li>
-                                <li class='card-back-li'>Technologies Used: {{ project.technologiesUsed }}</li>
-                                <li class='card-back-li'>My Role: {{ project.myRole }}</li>
-                            </ul>
-                            <a href={{project.gitHub}} target='blank'><button mat-raised-button> Go to
-                                    GitHub</button></a>
-                            <a href={{project.link}} target='blank'><button mat-raised-button
-                                    *ngIf='project.link !== project.gitHub'>Go to Website</button></a>
-                        </div>
-                        <div class='card-front'>
-                            <img src='{{project.src}}' alt='{{project.alt}}'>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </mat-card>
-        <mat-card *ngIf='error === true'>
-            <h2>{{ errorMessage }}</h2>
-        </mat-card>
-    </div>
-    <div class="skillsets-container">
-        <mat-card class='skillsets-card'>
-            <h1>Technologies I Use</h1>
-            <hr>
-            <ul class='skillsets-ul' >
-                <li data-aos='fade-right' class='skillsets-li' *ngFor='let langauge of languagesData'><img
-                        src='{{ langauge.src }}' alt='{{langauge.alt}}'></li>
-            </ul>
-        </mat-card>
-    </div>
-</div> -->
