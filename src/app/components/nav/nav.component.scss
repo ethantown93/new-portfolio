@@ -1,0 +1,59 @@
+$theme-blue: #489BCF;
+
+.navigation {
+    position: absolute;
+    padding: 2rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 100;
+
+    &-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        &-item {
+            list-style: none;
+            font-size: 2rem;
+            font-weight: 700;
+            cursor: pointer;
+            background-size: 225%;
+            background-image: transparent;
+            padding: .5rem 1.5rem;
+            transition: all .45s;
+
+            &:not(.img) {
+                background-image: linear-gradient( 120deg, transparent 0%, transparent 50%, $theme-blue 50%);
+            }
+
+            &:hover,
+            &:active {
+                background-position: 100%;
+                &:not(.img){
+                    box-shadow: 0 1.5rem 2.5rem rgba(black, .8);
+                }
+            }
+
+            &-image {
+                height: 8rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                transition: all .5s;
+
+                &:hover {
+                    transform: translateY(-.5rem);
+                }
+            }
+
+            &-link {
+                &:link,
+                &:visited {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
+}

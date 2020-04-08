@@ -1,0 +1,64 @@
+$theme-blue: #489BCF;
+$theme-purple-light: #4A61A4;
+$theme-purple-dark: #2E1B49;
+
+$color-grey: #fff;
+
+.footer {
+    background: linear-gradient(100deg, $theme-purple-light, $theme-purple-dark, $theme-purple-light);
+    padding: 10rem 0;
+    font-size: 1.4rem;
+
+    &-div {
+        text-align: center;
+    }
+
+    &-logo-box {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 8rem;
+        color: $color-grey;
+    }
+
+    &-logo {
+        width: 10%;
+    }
+
+    &-navigation {
+        border-top: 1px solid $color-grey;
+        display: inline-block;
+    }
+
+    &-list {
+        list-style: none;
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    &-item {
+        display: inline-block;
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &-link {
+        &:link,
+        &:visited {
+            color: $color-grey;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .2s;
+        }
+
+        &:hover,
+        &:active {
+            color: $theme-blue;
+            box-shadow: 0 1rem 2rem rgba(black, .4);
+            background-color: $color-grey;
+            transform: rotate(5deg) scale(1.2);
+        }
+    }
+
+}
