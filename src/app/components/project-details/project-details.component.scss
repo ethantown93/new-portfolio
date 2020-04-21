@@ -4,7 +4,23 @@ $theme-purple-light: #4A61A4;
 .project-details {
     min-width: 50vw;
     padding: 2.5rem;
+    max-height: 90vh;
     background-color: #f7f7f7;
+    overflow-x: hidden;
+
+    @media all and (max-width: 87.5em) {
+        overflow-x: hidden;
+    }
+
+    @media all and (max-width: 31.25em) {
+        padding: 0;
+    }
+
+    // &-container {
+    //     @media all and (max-width: 87.5em){
+    //         overflow-x: hidden;
+    //     }
+    // }
 
     &-h1 {
         font-size: 4rem;
@@ -19,10 +35,23 @@ $theme-purple-light: #4A61A4;
         display: flex;
         justify-content: center;
         padding: 4rem;
+
+        @media all and (max-width: 87.5em) {
+            display: block;
+        }
+
+        @media all and (max-width: 31.25em) {
+            padding: 2rem;
+        }
         
         &-item {
             margin: 3rem;
             list-style: none;
+
+            @media all and (max-width: 87.5em) {
+                text-align: center;
+                margin: 1.5rem;
+            }
             
         }
 
@@ -32,11 +61,19 @@ $theme-purple-light: #4A61A4;
             transition: all .5s;
             position: relative;
 
+            @media all and (max-width: 87.5em){
+                width: 90%;
+            }
+
             &:hover {
                 outline: .5rem solid $theme-purple-light;
                 transform: scale(1.5) translateY(.5rem);
                 box-shadow: 0 1rem 1.5rem rgba(black, .8);
                 z-index: 100;
+
+                @media all and (max-width: 87.5em){
+                    transform: scale(1.1) translateY(.5rem);
+                }
             }
         }
 
@@ -58,6 +95,19 @@ $theme-purple-light: #4A61A4;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media all and (max-width: 87.5em) {
+            transform: skewX(0);
+            display: block;
+        }
+
+        @media all and (max-width: 31.25em) {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            width: 90%;
+            padding: 2rem;
+            
+        }
     }
 
     &-tools {
@@ -65,6 +115,13 @@ $theme-purple-light: #4A61A4;
         width: 50%;
         border-right: 1px solid $theme-blue;
         transform: skewX(12deg);
+
+        @media all and (max-width: 87.5em) {
+            transform: skewX(0);
+            display: block;
+            width: 100%;
+            border-right: none;
+        }
 
         &-h1 {
             font-size: 2.5rem;
@@ -79,11 +136,19 @@ $theme-purple-light: #4A61A4;
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @media all and (max-width: 34.375em) {
+                display: block;
+            }
         }
 
         &-item {
             list-style: none;
             padding: 3rem;
+
+            @media all and (max-width: 34.375em) {
+                display: block;
+            }
         }
 
         &-label {
@@ -103,6 +168,14 @@ $theme-purple-light: #4A61A4;
         width: 50%;
         transform: skewX(12deg);
 
+        @media all and (max-width: 87.5em) {
+            transform: skewX(0);
+            display: block;
+            width: 100%;
+            font-size: 1.8rem;
+
+        }
+
         &-h1 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -116,6 +189,10 @@ $theme-purple-light: #4A61A4;
             font-size: 1.4rem;
             padding: 2rem;
 
+            @media all and (max-width: 87.5em) {
+                font-size: 1.8rem;
+    
+            }
         }
     }
 }

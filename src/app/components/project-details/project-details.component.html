@@ -1,34 +1,35 @@
 <section class="project-details" *ngIf='projectData !== undefined'>
-
-    <h1 class="project-details-h1">
-        {{ projectData.title }} Details:
-    </h1>
-
-    <div class="project-details-images">
-        <ul class="project-details-list">
-            <li class="project-details-list-item" *ngFor='let image of projectData.images' data-aos="zoom-in-up" data-aos-duration="500">
-                <img src="{{ image.image }}" alt="" class="project-details-list-image">
-            </li>
-        </ul>
-    </div>
-    <hr>
-    <div class="project-details-info">
-        <div class="project-details-tools">
-            <h1 class="project-details-tools-h1">
-                Tools Used:
-            </h1>
-            <ul class="project-details-tools-list">
-                <li class="project-details-tools-item" *ngFor=' let tool of projectData.tools_used'>
-                    <label for="" class="project-details-tools-label">{{ tool.tool }}</label>
-                    <img class="project-details-tools-image" src="{{ tool.src }}" alt="">
+    <div class="project-details-container">
+        <h1 class="project-details-h1">
+            {{ projectData.title }} Details:
+        </h1>
+    
+        <div class="project-details-images">
+            <ul class="project-details-list">
+                <li class="project-details-list-item" *ngFor='let image of projectData.images' data-aos="zoom-in-up" data-aos-duration="500">
+                    <img src="{{ image.image }}" alt="" class="project-details-list-image">
                 </li>
             </ul>
         </div>
-        <div class="project-details-description">
-            <h1 class='project-details-description-h1'>Description:</h1>
-            <p class="project-details-description-text">
-                {{ projectData.full_description }}
-            </p>
+        <hr>
+        <div class="project-details-info">
+            <div class="project-details-tools">
+                <h1 class="project-details-tools-h1">
+                    Tools Used:
+                </h1>
+                <ul class="project-details-tools-list">
+                    <li class="project-details-tools-item" *ngFor=' let tool of projectData.tools_used'>
+                        <label for="" class="project-details-tools-label">{{ tool.tool }}</label>
+                        <img class="project-details-tools-image" src="{{ tool.src }}" alt="">
+                    </li>
+                </ul>
+            </div>
+            <div class="project-details-description">
+                <h1 class='project-details-description-h1'>Description:</h1>
+                <p class="project-details-description-text">
+                    {{ projectData.full_description }}
+                </p>
+            </div>
         </div>
     </div>
 </section>
