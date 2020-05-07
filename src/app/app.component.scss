@@ -1,0 +1,90 @@
+
+
+@keyframes slideRight {
+    0% {
+        width: 5rem;
+    }
+
+    50% {
+        width: 10rem;
+    }
+
+    100% {
+        width: 15rem;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-200rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(200rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollDown {
+    0% {
+        height: 280%;
+    }
+
+    100% {
+        height: 100%;
+        box-shadow: none;
+    }
+}
+
+@keyframes slideUpBtn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10rem);
+    }
+
+    80% {
+        transform: translateY(2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeBlurY {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg);
+        filter: blur(1rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg);
+        filter:blur(0)
+    }
+}
+
+@keyframes fadeBlurX {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg);
+        filter: blur(1rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+        filter:blur(0)
+    }
+}

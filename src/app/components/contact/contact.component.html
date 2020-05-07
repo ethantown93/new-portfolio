@@ -1,0 +1,33 @@
+<section class="contact">
+    <form #contactForm='ngForm' (ngSubmit)='onSubmit(contactForm.value); contactForm.reset()' class="contact-form">
+        <h1 class='contact-form-h1'>Send Me a Message:</h1>
+        <div class="contact-form-field">
+            <div class='contact-form-error' [hidden]='nameRef.valid || nameRef.pristine'>
+                *Please enter your name
+            </div>
+            <input type="text" id='full_name' placeholder='Full Name' class="contact-form-field-input" name='full_name' ngModel required #nameRef='ngModel'>
+            <label for="full_name" class='contact-form-field-label'>Full Name</label>
+
+        </div>
+        <div class="contact-form-field">
+            <input type="email" id='email' class="contact-form-field-input" name='email' ngModel required placeholder='Email'>
+            <label for="email" class='contact-form-field-label'>Email</label>
+        </div>
+        <div class="contact-form-field">
+            <div class="contact-form-error" *ngIf='messageRef.errors && (messageRef.dirty || messageRef.touched)'>
+                <div [hidden]='!messageRef.errors.required'>
+                    *Please enter a message
+                </div>
+                <div [hidden]='!messageRef.errors.minLength'>
+                    *Please enter at least 20 characters
+                </div>
+            </div>
+            <textarea #messageRef class="contact-form-field-input" type="text" id='message' class="contact-form-field-input" name='message' ngModel required minLength='20' placeholder='Message'></textarea>
+            <label for="message" class='contact-form-field-label'>Message</label>
+        </div>
+        <button [disabled]="contactForm.form.invalid" class="contact-form-button" type='submit'>Submit</button>
+    </form>
+    <button class='contact-bck-home' routerLink='/'> &#8592; Back to Home</button>
+</section>
+
+

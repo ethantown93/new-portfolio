@@ -1,0 +1,78 @@
+$color-primary-dark: #232526;
+$color-primary-light: #414345;
+
+$theme-blue: #489BCF;
+$theme-purple-light: #4A61A4;
+$theme-purple-dark: #2E1B49;
+
+$font:'Maven Pro', sans-serif;
+
+.resume {
+    height: 70vh;
+    padding: 8rem 3rem;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 255, 0.808);
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    margin-top: -5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @media all and (max-width: 85.375em) {
+        clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+        height: 60vh;
+        padding: 9rem 3rem;
+    }
+
+    @media all and (max-width: 50.75em) {
+        height: 80vh;
+    }
+
+    @media all and (max-width: 28.125em){
+        height: 55vh;
+    }
+
+    &-bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -10;
+        opacity: .95;
+
+        &-content {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-content {
+        text-align: center;
+        color: white;
+    }
+
+    &-h2 {
+        font-size: 3rem;
+        font-weight: 400;
+    }
+
+    &-text {
+        font-size: 1.6rem;
+        padding: 2rem;
+
+        @media all and (max-width: 50.75em) {
+            font-size: 1.8rem;
+        }
+    
+    }
+
+    &-button:hover i {
+        transform: translateX(1rem);
+        transition: all .75s;
+    }
+
+}

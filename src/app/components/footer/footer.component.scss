@@ -8,6 +8,7 @@ $color-grey: #fff;
     background: linear-gradient(100deg, $theme-purple-light, $theme-purple-dark, $theme-purple-light);
     padding: 10rem 0;
     font-size: 1.4rem;
+    flex-shrink: 0;
 
     @media all and (max-width: 85.375em) {
         padding: 3rem 0;

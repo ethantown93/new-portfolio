@@ -16,6 +16,9 @@ export class UpdateNavService {
   getLanguages: AngularFirestoreCollection;
   getLanguage: Observable<any>;
 
+  addMessages: AngularFirestoreCollection;
+  addMessage: Observable<any>
+
   private updateNavBarSource = new Subject<any>();
   updateNavBar$ = this.updateNavBarSource.asObservable();
 
@@ -25,7 +28,8 @@ export class UpdateNavService {
   ) 
   { 
     this.getProjects = this.afs.collection('myProjects');
-    this.getLanguages = this.afs.collection('myLanguages')
+    this.getLanguages = this.afs.collection('myLanguages');
+    this.addMessages = this.afs.collection('myMessages')
  }
 
   updateNav(method){
@@ -63,6 +67,14 @@ export class UpdateNavService {
          resolve(userData), err => reject(err)
        ))
      })
+
+   }
+
+   // store messages in firestor
+   submitMessage(message){
+    this.addMessages.add(message);
+    console.log(message)
+
    }
 
 }

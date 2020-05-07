@@ -1,0 +1,12 @@
+  <!-- Home cards 2 -->
+
+  <section class="technologies">
+    <h2 class='technologies-h2'>Technologies I Use</h2>
+    <div class="technologies-container">
+      <div class='technologies-div' *ngFor="let langauge of languagesData" data-aos="fade-right" data-aos-duration="750">
+        <img class="technologies-img" src='{{ langauge.src }}' alt='{{langauge.alt}}' />
+        <h3 class='technologies-h3'>{{ langauge.languages }}</h3>
+  
+      </div>
+    </div>
+  </section>

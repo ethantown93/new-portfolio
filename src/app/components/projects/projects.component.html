@@ -1,0 +1,43 @@
+<!-- Home cards 1 -->
+
+<section class='cards' *ngIf='!projectsLoaded'>
+    <div class="cards-gif"><img src="./assets/videos/loader.gif" alt=""></div>
+  </section>
+
+  <section class="cards-home" *ngIf='projectsLoaded'>
+    <h2 class="cards-home-h2">My Recent Work</h2>
+    <h4 class="cards-home-h4">Tap the card for project details &darr;</h4>
+    <div class="cards-home-div-main">
+      <div class="cards-home-div" *ngFor='let project of projects' data-aos="fade-up" data-aos-duration="750">
+        <figure class="cards-home-div-figure">
+          <img class='cards-home-div-img' src='{{project.src}}' alt='{{project.alt}}'>
+          <figcaption class="cards-home-div-figure-caption">
+            <i class="fa fa-eye cards-home-div-figure-caption-icon" aria-hidden="true"></i>
+            <a (click)='openDialog(project)' class="cards-home-div-figure-caption-link">Learn
+              More<span>&#8594;</span></a>
+          </figcaption>
+        </figure>
+        <h3 class='cards-home-header'>{{ project.title }}</h3>
+        <ul class='cards-home-list'>
+          <li class='cards-home-list-item'>
+            <strong>Login Credentials:</strong>
+          </li>
+          <li class='cards-home-list-item'>
+            <strong>Login Username:</strong> {{ project.login_username }}
+          </li>
+          <li class='cards-home-list-item'>
+            <strong>Login Password:</strong> {{ project.login_password }}
+          </li>
+        </ul>
+        <div class="cards-home-learn-more">
+          <a href="{{ project.gitHub }}" target="blank" class="cards-home-learn-more-links">
+            <i class="fa fa-github" aria-hidden="true"></i> GitHub
+          </a>
+          <a href="{{ project.link }}" target="blank" class="cards-home-learn-more-links">
+            <i class="fa fa-globe" aria-hidden="true"></i> Website
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
